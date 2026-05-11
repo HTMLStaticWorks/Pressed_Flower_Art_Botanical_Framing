@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop | Bloom Botanical Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .shop-header { padding: 150px 0 80px; text-align: center; background: var(--bg-secondary); }
+    .shop-container { display: grid; grid-template-columns: 250px 1fr; gap: 40px; margin-top: 60px; }
+    
+    .shop-sidebar h4 { text-align: left; margin-bottom: 20px; font-size: 1.1rem; }
+    .category-list li { margin-bottom: 12px; }
+    .category-list a { color: var(--text-secondary); }
+    .category-list a.active { color: var(--color-primary); font-weight: 600; }
+
+    @media (max-width: 768px) {
+      .shop-container { grid-template-columns: 1fr; }
+      .shop-sidebar { order: -1; text-align: center; }
+      .shop-sidebar h4 { text-align: center; }
+      .category-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Bloom</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html" class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+        <a href="login.html" class="login-btn">Login</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="nav-drawer">
+    <button class="drawer-close"><i class="ph ph-x"></i></button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+    </div>
+    <div class="drawer-actions">
+      <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <section class="shop-header">
+      <div class="container">
+        <h1 data-reveal>Botanical Shop</h1>
+        <p data-reveal class="stagger-1">Curated dried flowers, DIY kits, and archival framing supplies.</p>
+      </div>
+    </section>
+
+    <div class="container shop-container">
+      <aside class="shop-sidebar" data-reveal>
+        <h4>Categories</h4>
+        <ul class="category-list">
+          <li><a href="#" class="active">All Products</a></li>
+          <li><a href="#">Dried Flowers</a></li>
+          <li><a href="#">DIY Kits</a></li>
+          <li><a href="#">Frames</a></li>
+          <li><a href="#">Botanical Art</a></li>
+          <li><a href="#">Gifts</a></li>
+        </ul>
+      </aside>
+
+      <div class="collection-grid">
+        <div class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <div class="card-body">
+            <h3>Dried Lavender Bundle</h3>
+            <p>$18.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Lavender Bundle', price: 18})">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <div class="card-body">
+            <h3>Botanical Pressing Kit</h3>
+            <p>$45.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Pressing Kit', price: 45})">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1591123720164-de1348028a82?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <div class="card-body">
+            <h3>Archival Oak Frame</h3>
+            <p>$55.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Oak Frame', price: 55})">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1516102228333-820892095697?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <div class="card-body">
+            <h3>Pressed Rose Set</h3>
+            <p>$24.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Pressed Rose Set', price: 24})">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRIPE_INTEGRATION -->
+    <div class="container" style="text-align: center; margin-top: 80px;">
+       <!-- <button id="checkout-button">Pay with Stripe</button> -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Bloom</a>
+        <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
+        <div class="social-links">
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-pinterest-logo"></i></a>
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collection</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Join our community for botanical tips and first access to collections.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal | Bloom Botanical Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .blog-header { padding: 150px 0 80px; text-align: center; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
+    .blog-card { cursor: pointer; text-align: left; align-items: flex-start; }
+    .blog-meta { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-primary); margin-bottom: 10px; }
+    .blog-card h3 { text-align: left; margin-bottom: 15px; font-size: 1.8rem; }
+    .blog-card p { text-align: left; }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Bloom</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html" class="active">Blog</a><a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+        <a href="login.html" class="login-btn">Login</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="nav-drawer">
+    <button class="drawer-close"><i class="ph ph-x"></i></button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+    </div>
+    <div class="drawer-actions">
+      <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <section class="blog-header container">
+      <h1 data-reveal>The Botanical Journal</h1>
+      <p data-reveal class="stagger-1">Insights, tutorials, and stories from our studio.</p>
+    </section>
+
+    <section class="container" style="padding-bottom: 100px;">
+      <div class="blog-grid">
+        <div class="card blog-card" data-reveal onclick="location.href='blog-single.html'">
+          <img src="https://images.unsplash.com/photo-1544411047-c491574abb22?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Blog">
+          <div class="card-body">
+            <span class="blog-meta">Tutorials | May 10, 2024</span>
+            <h3>How to Press Your First Flower</h3>
+            <p>A step-by-step guide for beginners on choosing, deconstructing, and pressing garden blooms at home.</p>
+          </div>
+        </div>
+        <div class="card blog-card" data-reveal onclick="location.href='blog-single.html'">
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Blog">
+          <div class="card-body">
+            <span class="blog-meta">Wedding | May 05, 2024</span>
+            <h3>The Meaning of Wedding Blooms</h3>
+            <p>Exploring the symbolism behind common bridal flowers and how to preserve their beauty forever.</p>
+          </div>
+        </div>
+        <div class="card blog-card" data-reveal onclick="location.href='blog-single.html'">
+          <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Blog">
+          <div class="card-body">
+            <span class="blog-meta">Behind the Scenes | April 28, 2024</span>
+            <h3>Inside the Bloom Studio</h3>
+            <p>A peek into our daily routines, archival materials, and the passion that drives our preservation art.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Bloom</a>
+        <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
+        <div class="social-links">
+          <a href="#"><i class="ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph-pinterest-logo"></i></a>
+          <a href="#"><i class="ph-facebook-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collection</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Join our community for botanical tips and first access to collections.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

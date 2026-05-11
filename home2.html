@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom | Editorial Journal</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .editorial-hero {
+      height: 90vh;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 0;
+      overflow: hidden;
+      margin-top: var(--nav-height);
+    }
+
+    .editorial-hero-img {
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1516102228333-820892095697?auto=format&fit=crop&q=80&w=1500') no-repeat center center;
+      background-size: cover;
+    }
+
+    .editorial-hero-content {
+      padding: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background-color: var(--bg);
+    }
+
+    .editorial-hero-content h1 {
+      text-align: left;
+      font-size: 5rem;
+      margin-bottom: 30px;
+    }
+
+    .editorial-hero-content p {
+      margin-bottom: 40px;
+    }
+
+    .featured-journal {
+      padding: 100px 0;
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 40px;
+    }
+
+    .journal-main-card {
+      position: relative;
+      overflow: hidden;
+      height: 600px;
+    }
+
+    .journal-main-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .journal-main-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 60px;
+      background: linear-gradient(transparent, rgba(0,0,0,0.8));
+      color: white;
+    }
+
+    .journal-side-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media (max-width: 1024px) {
+      .editorial-hero {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+      .editorial-hero-img {
+        height: 50vh;
+      }
+      .editorial-hero-content {
+        padding: 60px 20px;
+        text-align: center;
+      }
+      .editorial-hero-content h1 {
+        text-align: center;
+        font-size: 3.5rem;
+      }
+      .journal-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Bloom</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html" class="active">Home 2</a>
+        <a href="services.html">Collection</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="workshop.html">Workshop</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+        <a href="login.html" class="login-btn">Login</a>
+        <div class="hamburger">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer (Identical to index) -->
+  <div class="drawer-overlay"></div>
+  <div class="nav-drawer">
+    <button class="drawer-close"><i class="ph ph-x"></i></button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="services.html">Collection</a>
+      <a href="wedding.html">Wedding</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+    </div>
+    <div class="drawer-actions">
+      <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <section class="editorial-hero">
+      <div class="editorial-hero-img" data-reveal></div>
+      <div class="editorial-hero-content">
+        <h1 data-reveal class="stagger-1">The Botanical <br> Journal</h1>
+        <p data-reveal class="stagger-2">A curated exploration into the intersection of nature, art, and the preservation of memory.</p>
+        <div data-reveal class="stagger-3">
+          <a href="blog.html" class="btn btn-primary">Read the Stories</a>
+          <a href="shop.html" class="btn btn-outline" style="margin-left: 10px;">Shop the Issue</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container featured-journal">
+      <div class="section-title">
+        <h2 data-reveal>Curated Highlights</h2>
+      </div>
+      <div class="journal-grid">
+        <div class="journal-main-card" data-reveal>
+          <img src="https://images.unsplash.com/photo-1544411047-c491574abb22?auto=format&fit=crop&q=80&w=1500" alt="Main Journal">
+          <div class="journal-main-overlay">
+            <h3>The Art of the Herbarium</h3>
+            <p>Exploring the 500-year history of botanical documentation and its modern artistic revival.</p>
+            <a href="blog-single.html" class="btn btn-outline" style="border-color: white; color: white; margin-top: 20px;">Read More</a>
+          </div>
+        </div>
+        <div class="journal-side-grid">
+          <div class="card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=600" alt="Small Journal" style="height: 200px; width: 100%; object-fit: cover;">
+            <div class="card-body">
+              <h4>Winter Blooms</h4>
+              <p>Preserving the delicate textures of the coldest season.</p>
+            </div>
+          </div>
+          <div class="card" data-reveal>
+            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=600" alt="Small Journal" style="height: 200px; width: 100%; object-fit: cover;">
+            <div class="card-body">
+              <h4>Wedding Heirlooms</h4>
+              <p>How we transformed Sarah & Tom's bouquet into art.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container" style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
+        <div style="flex: 1; min-width: 300px;" data-reveal>
+          <h2 style="text-align: left;">Artisanal Supply</h2>
+          <p style="margin: 20px 0;">We provide the same professional-grade tools and dried botanicals used in our studio for your own creative projects.</p>
+          <a href="shop.html" class="btn btn-primary">Visit the Shop</a>
+        </div>
+        <div style="flex: 1.5; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" data-reveal>
+           <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=500" alt="Supplies 1" style="border-radius: var(--radius);">
+           <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=500" alt="Supplies 2" style="border-radius: var(--radius);">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer (Identical to index) -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Bloom</a>
+        <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
+        <div class="social-links">
+          <a href="#"><i class="ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph-pinterest-logo"></i></a>
+          <a href="#"><i class="ph-facebook-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collection</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Join our community for botanical tips and first access to collections.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

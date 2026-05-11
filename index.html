@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bloom | Pressed Flower Art & Botanical Framing</title>
+  <meta name="description" content="Bloom is a premium botanical studio specializing in pressed flower art, wedding bouquet preservation, and artisanal framing. Discover the beauty of nature preserved forever.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Icons -->
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ArtGallery",
+    "name": "Bloom Botanical Studio",
+    "image": "https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=2070",
+    "@id": "",
+    "url": "https://bloomstudio.com",
+    "telephone": "+15551234567",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Botanical Lane",
+      "addressLocality": "Bloom Valley",
+      "addressRegion": "CA",
+      "postalCode": "90210",
+      "addressCountry": "US"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.instagram.com/bloom_botanical",
+      "https://www.pinterest.com/bloom_botanical"
+    ]
+  }
+  </script>
+  
+  <style>
+    /* Hero Specific */
+    .hero {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: #FFFFFF;
+    }
+
+    [data-theme="dark"] .hero {
+      background: #000000;
+    }
+
+    .hero-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.6;
+      background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+      background-size: cover;
+      transform: scale(1.1);
+      transition: transform 10s ease-out;
+    }
+
+    .hero.revealed .hero-bg {
+      transform: scale(1);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 800px;
+    }
+
+    .hero-content h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Floating Petals */
+    .petal {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: var(--color-secondary);
+      opacity: 0.3;
+      border-radius: 50% 0 50% 0;
+      pointer-events: none;
+      z-index: 1;
+      animation: float 15s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translate(0, -10%) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.3; }
+      90% { opacity: 0.3; }
+      100% { transform: translate(100vw, 110vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Collection Grid */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    /* Why Bloom Icons */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .feature-icon {
+      font-size: 3rem;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Bloom</a>
+      
+      <nav class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="services.html">Collection</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="workshop.html">Workshop</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="rtl-toggle" title="Switch RTL/LTR"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle" title="Toggle Theme"><i class="ph ph-moon"></i></button>
+        <a href="login.html" class="login-btn">Login</a>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="nav-drawer">
+    <button class="drawer-close"><i class="ph ph-x"></i></button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="home2.html">Home 2</a>
+      <a href="services.html">Collection</a>
+      <a href="wedding.html">Wedding</a>
+      <a href="workshop.html">Workshop</a>
+      <a href="shop.html">Shop</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+    </div>
+    <div class="drawer-actions">
+      <button class="theme-toggle" title="Toggle Theme"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero revealed" id="home">
+      <div class="hero-bg"></div>
+      <!-- Petal elements will be added by JS for variety or static in HTML -->
+      <div class="petal" style="left: 10%; animation-delay: 0s;"></div>
+      <div class="petal" style="left: 30%; animation-delay: 5s;"></div>
+      <div class="petal" style="left: 50%; animation-delay: 2s;"></div>
+      <div class="petal" style="left: 70%; animation-delay: 8s;"></div>
+      <div class="petal" style="left: 90%; animation-delay: 3s;"></div>
+
+      <div class="hero-content">
+        <h1 data-reveal class="stagger-1">Ephemeral Beauty, <br> Eternally Framed</h1>
+        <p data-reveal class="stagger-2">Artisanal botanical preservation and custom framing for life's most precious blooms.</p>
+        <div class="hero-btns" data-reveal class="stagger-3">
+          <a href="services.html" class="btn btn-primary">Explore the Collection</a>
+          <a href="workshop.html" class="btn btn-outline">Book a Workshop</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Signature Collection -->
+    <section class="container">
+      <div class="section-title">
+        <h2 data-reveal>Signature Collection</h2>
+        <p data-reveal>Hand-selected specimens from our botanical archives, meticulously pressed and archival-framed.</p>
+      </div>
+      <div class="collection-grid">
+        <div class="card" data-reveal class="stagger-1">
+          <img src="https://images.unsplash.com/photo-1591123720164-de1348028a82?auto=format&fit=crop&q=80&w=800" alt="Framed Fern" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Ancient Fern</h3>
+            <p class="card-text">A minimalist study of prehistoric elegance. Archival glass, oak frame.</p>
+            <a href="shop.html" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        <div class="card" data-reveal class="stagger-2">
+          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800" alt="Pressed Roses" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Desert Rose</h3>
+            <p class="card-text">Warm terracotta hues captured in a deep-set museum-grade frame.</p>
+            <a href="shop.html" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+        <div class="card" data-reveal class="stagger-3">
+          <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=800" alt="Custom Composition" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Wild Harvest</h3>
+            <p class="card-text">A dynamic composition of local flora found in the heart of our valley.</p>
+            <a href="shop.html" class="btn btn-outline">View Details</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wedding Preservation -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+        <div class="wedding-img" data-reveal>
+          <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1000" alt="Wedding Bouquet" style="border-radius: var(--radius); box-shadow: var(--shadow);">
+        </div>
+        <div class="wedding-content">
+          <h2 data-reveal style="text-align: left;">Wedding Preservation</h2>
+          <p data-reveal style="text-align: left; margin: 25px 0;">Your wedding day blooms deserve more than just a memory. We specialize in transforming bridal bouquets into heirloom-quality framed art that lasts a lifetime.</p>
+          <ul data-reveal style="margin-bottom: 35px;">
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+              <i class="ph ph-check" style="color: var(--color-primary);"></i>
+              Overnight shipping for fresh bouquets
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+              <i class="ph ph-check" style="color: var(--color-primary);"></i>
+              Traditional Japanese pressing techniques
+            </li>
+            <li style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+              <i class="ph ph-check" style="color: var(--color-primary);"></i>
+              Archival UV-protection glass
+            </li>
+          </ul>
+          <a href="wedding.html" class="btn btn-primary" data-reveal>Start Your Preservation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Bloom -->
+    <section class="container">
+      <div class="section-title">
+        <h2 data-reveal>Why Choose Bloom</h2>
+        <p data-reveal>Our commitment to botanical integrity and artisanal craftsmanship sets us apart.</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-item" data-reveal class="stagger-1">
+          <div class="feature-icon"><i class="ph ph-hand-waving"></i></div>
+          <h3>Handcrafted with Care</h3>
+          <p>Every specimen is meticulously pressed and arranged by our lead artists.</p>
+        </div>
+        <div class="feature-item" data-reveal class="stagger-2">
+          <div class="feature-icon"><i class="ph ph-archive"></i></div>
+          <h3>Archival Standards</h3>
+          <p>We use museum-grade, acid-free materials to ensure your art lasts for generations.</p>
+        </div>
+        <div class="feature-item" data-reveal class="stagger-3">
+          <div class="feature-icon"><i class="ph ph-frame-corners"></i></div>
+          <h3>Bespoke Framing</h3>
+          <p>Choose from our curated selection of sustainably sourced hardwood frames.</p>
+        </div>
+        <div class="feature-item" data-reveal class="stagger-4">
+          <div class="feature-icon"><i class="ph ph-truck"></i></div>
+          <h3>Worldwide Shipping</h3>
+          <p>Safely delivered to your doorstep, no matter where you are in the world.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section style="background-color: var(--bg-secondary);">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>Client Stories</h2>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+          <div class="card" style="padding: 40px;" data-reveal>
+            <i class="ph ph-quotes" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 20px;"></i>
+            <p style="font-style: italic; margin-bottom: 20px;">"The way they preserved my bridal bouquet was beyond words. It's now the centerpiece of our home and looks just as vibrant as the day I walked down the aisle."</p>
+            <h4 style="font-family: var(--font-sans); font-size: 1rem; font-weight: 600;">— Sarah J., Wedding Client</h4>
+          </div>
+          <div class="card" style="padding: 40px;" data-reveal>
+            <i class="ph ph-quotes" style="font-size: 2rem; color: var(--color-primary); margin-bottom: 20px;"></i>
+            <p style="font-style: italic; margin-bottom: 20px;">"Attending the workshop was a soul-soothing experience. Learning the delicate art of pressing flowers has given me a new hobby that connects me to nature."</p>
+            <h4 style="font-family: var(--font-sans); font-size: 1rem; font-weight: 600;">— Michael R., Workshop Attendee</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workshop CTA -->
+    <section class="container" style="text-align: center;">
+      <div style="background: var(--color-accent); color: white; padding: 100px 40px; border-radius: var(--radius); overflow: hidden; position: relative;">
+        <div style="position: absolute; top: 0; right: 0; width: 40%; height: 100%; background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=800') no-repeat center center; background-size: cover; opacity: 0.2;"></div>
+        <div style="position: relative; z-index: 2;">
+          <h2 data-reveal style="color: white; margin-bottom: 20px;">Join Our Next Workshop</h2>
+          <p data-reveal style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 40px;">Discover the secrets of botanical preservation in our hands-on studio sessions. Limited spots available for May.</p>
+          <div style="display: flex; gap: 20px; justify-content: center;" data-reveal>
+            <a href="workshop.html" class="btn btn-primary" style="background: white; color: var(--color-accent);">View Schedule</a>
+            <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Inquire for Private Session</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Bloom</a>
+        <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
+        <div class="social-links">
+          <a href="#"><i class="ph ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph ph-pinterest-logo"></i></a>
+          <a href="#"><i class="ph ph-facebook-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collection</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Join our community for botanical tips and first access to collections.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

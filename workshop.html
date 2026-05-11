@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workshops | Bloom Botanical Studio</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+  
+  <style>
+    .workshop-header {
+      padding: 150px 0 80px;
+      text-align: center;
+      background: var(--bg-secondary);
+    }
+
+    .workshop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .workshop-card {
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,0.05);
+      padding: 40px;
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      transition: var(--transition);
+    }
+
+    [data-theme="dark"] .workshop-card {
+      border-color: rgba(255,255,255,0.05);
+    }
+
+    .workshop-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow);
+    }
+
+    .workshop-date {
+      color: var(--color-primary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .workshop-spots {
+      margin-top: auto;
+      padding-top: 20px;
+      border-top: 1px solid rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    [data-theme="dark"] .workshop-spots { border-top-color: rgba(255,255,255,0.05); }
+
+    .spots-badge {
+      padding: 4px 12px;
+      background: #FFEBEB;
+      color: #D63031;
+      font-size: 0.8rem;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: #EEE;
+      margin-top: 10px;
+      border-radius: 2px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--color-primary);
+    }
+  </style>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Bloom</a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="home2.html">Home 2</a>
+        <a href="services.html">Collection</a>
+        <a href="wedding.html">Wedding</a>
+        <a href="workshop.html" class="active">Workshop</a>
+        <a href="shop.html">Shop</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+        <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+        <a href="login.html" class="login-btn">Login</a>
+        <div class="hamburger"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-overlay"></div>
+  <div class="nav-drawer">
+    <button class="drawer-close"><i class="ph ph-x"></i></button>
+    <div class="drawer-links">
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+    </div>
+    <div class="drawer-actions">
+      <button class="theme-toggle"><i class="ph ph-moon"></i></button>
+      <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
+    </div>
+  </div>
+
+  <main>
+    <section class="workshop-header">
+      <div class="container">
+        <h1 data-reveal>Botanical Workshops</h1>
+        <p data-reveal class="stagger-1">Learn the timeless art of flower preservation in our sun-drenched studio.</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="section-title">
+        <h2 data-reveal>Upcoming Sessions</h2>
+      </div>
+
+      <div class="workshop-grid">
+        <div class="workshop-card" data-reveal class="stagger-1">
+          <span class="workshop-date">May 15, 2024 | 10:00 AM</span>
+          <h3 style="text-align: left; margin-bottom: 15px;">Introduction to Flower Pressing</h3>
+          <p style="margin-bottom: 25px;">Learn the basics of specimen selection, deconstruction, and traditional pressing methods. Perfect for beginners.</p>
+          <div class="workshop-spots">
+            <span>Price: $85</span>
+            <span class="spots-badge">Only 3 spots left!</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 80%;"></div></div>
+          <button class="btn btn-primary" style="margin-top: 25px;">Book Now</button>
+        </div>
+
+        <div class="workshop-card" data-reveal class="stagger-2">
+          <span class="workshop-date">May 22, 2024 | 2:00 PM</span>
+          <h3 style="text-align: left; margin-bottom: 15px;">Botanical Composition Art</h3>
+          <p style="margin-bottom: 25px;">Focus on the aesthetics of arrangement. Learn how to create dynamic, magazine-worthy compositions with dried flora.</p>
+          <div class="workshop-spots">
+            <span>Price: $110</span>
+            <span style="color: var(--text-muted);">8 spots available</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 20%;"></div></div>
+          <button class="btn btn-primary" style="margin-top: 25px;">Book Now</button>
+        </div>
+
+        <div class="workshop-card" data-reveal class="stagger-3">
+          <span class="workshop-date">June 05, 2024 | 11:00 AM</span>
+          <h3 style="text-align: left; margin-bottom: 15px;">Advanced Framing Techniques</h3>
+          <p style="margin-bottom: 25px;">Deep dive into archival mounting and working with double-glass floating frames. All materials included.</p>
+          <div class="workshop-spots">
+            <span>Price: $150</span>
+            <span class="spots-badge">Filling Fast!</span>
+          </div>
+          <div class="progress-bar"><div class="progress-fill" style="width: 65%;"></div></div>
+          <button class="btn btn-primary" style="margin-top: 25px;">Book Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;">
+        <div data-reveal>
+          <h2 style="text-align: left;">Private Sessions</h2>
+          <p style="margin: 25px 0;">Looking for a unique bridal shower activity or a private group event? We offer customized workshops for groups of 6 or more.</p>
+          <ul style="margin-bottom: 35px;">
+            <li style="margin-bottom: 10px;"><i class="ph-check"></i> Custom curriculum based on your interests</li>
+            <li style="margin-bottom: 10px;"><i class="ph-check"></i> Complimentary botanical refreshments</li>
+            <li style="margin-bottom: 10px;"><i class="ph-check"></i> Flexible scheduling (weekdays/weekends)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline">Inquire for Private Group</a>
+        </div>
+        <div data-reveal>
+          <img src="https://images.unsplash.com/photo-1544411047-c491574abb22?auto=format&fit=crop&q=80&w=1000" alt="Workshop Studio" style="border-radius: var(--radius); box-shadow: var(--shadow);">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <a href="index.html" class="logo">Bloom</a>
+        <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
+        <div class="social-links">
+          <a href="#"><i class="ph-instagram-logo"></i></a>
+          <a href="#"><i class="ph-pinterest-logo"></i></a>
+          <a href="#"><i class="ph-facebook-logo"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Collection</a></li>
+          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Help</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Care Instructions</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p>Join our community for botanical tips and first access to collections.</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Your email address" required>
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="container copyright">
+      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Calendly Integration Placeholder -->
+  <!-- <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

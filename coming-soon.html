@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coming Soon | Bloom</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body { 
+      height: 100vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      text-align: center;
+      background: linear-gradient(rgba(255,255,255,0.9), rgba(255,255,255,0.9)), url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+      background-size: cover;
+    }
+    [data-theme="dark"] body {
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=2000') no-repeat center center;
+      background-size: cover;
+    }
+    .coming-soon-box { max-width: 600px; padding: 60px; background: var(--bg-secondary); border-radius: var(--radius); box-shadow: var(--shadow); }
+    .countdown { display: flex; justify-content: center; gap: 30px; margin: 40px 0; }
+    .count-item { display: flex; flex-direction: column; }
+    .count-number { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--color-primary); }
+    .count-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <div class="coming-soon-box">
+    <h1 style="font-size: 3rem; margin-bottom: 20px;">Something Beautiful is Growing</h1>
+    <p>Our Summer Collection launches in:</p>
+    
+    <div class="countdown">
+      <div class="count-item"><span class="count-number">12</span><span class="count-label">Days</span></div>
+      <div class="count-item"><span class="count-number">08</span><span class="count-label">Hours</span></div>
+      <div class="count-item"><span class="count-number">45</span><span class="count-label">Mins</span></div>
+      <div class="count-item"><span class="count-number">22</span><span class="count-label">Secs</span></div>
+    </div>
+
+    <form style="display: flex; gap: 10px;">
+      <input type="email" placeholder="Notify me when we launch" required style="flex: 1; padding: 12px; border: 1px solid var(--text-muted); background: transparent; color: var(--text-primary); border-radius: var(--radius);">
+      <button type="submit" class="btn btn-primary">Notify Me</button>
+    </form>
+    <p style="margin-top: 30px; font-size: 0.9rem; color: var(--text-muted);">Follow our progress on Instagram <a href="#" style="color: var(--color-primary); font-weight: 600;">@bloom_botanical</a></p>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
