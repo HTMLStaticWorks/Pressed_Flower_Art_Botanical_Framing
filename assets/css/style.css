@@ -197,6 +197,12 @@ section {
   letter-spacing: -1px;
 }
 
+.logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
+
 .nav-links {
   display: flex;
   gap: 30px;
