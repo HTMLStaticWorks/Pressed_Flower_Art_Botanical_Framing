@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop | Bloom Botanical Studio</title>
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -18,88 +21,116 @@
       text-align: center;
       background: var(--bg-secondary);
     }
-    .shop-container {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 40px;
-      margin-top: 60px;
+
+    .shop-filter-bar {
+      margin: 40px 0 60px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
-    .shop-sidebar h4 {
-      text-align: left;
-      margin-bottom: 20px;
-      font-size: 1.1rem;
+
+    [data-theme="dark"] .shop-filter-bar {
+      border-bottom-color: rgba(255, 255, 255, 0.05);
     }
-    .category-list li {
-      margin-bottom: 12px;
+
+    .category-list {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+      list-style: none;
+      padding: 0;
     }
+
     .category-list a {
       color: var(--text-secondary);
+      font-size: 1rem;
+      letter-spacing: 0.05em;
       transition: var(--transition);
-      display: inline-block;
+      position: relative;
+      padding-bottom: 8px;
     }
-    .category-list a:hover {
-      color: var(--color-primary);
-      padding-left: 8px;
-    }
+
+    .category-list a:hover,
     .category-list a.active {
       color: var(--color-primary);
-      font-weight: 600;
-      padding-left: 8px;
     }
+
+    .category-list a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 1.5px;
+      background: var(--color-primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    .category-list a.active::after,
+    .category-list a:hover::after {
+      width: 100%;
+    }
+
     @media (max-width: 768px) {
-      .shop-container {
-        grid-template-columns: 1fr;
-      }
-      .shop-sidebar {
-        order: -1;
-        text-align: center;
-      }
-      .shop-sidebar h4 {
-        text-align: center;
-      }
       .category-list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
+        gap: 20px;
+      }
+
+      .category-list a {
+        font-size: 0.9rem;
       }
     }
+
     /* Collection Grid */
     .collection-grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
-    @media (max-width: 1200px) {
+
+    @media (max-width: 1024px) {
+      .collection-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 991px) {
       .collection-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
+
     @media (max-width: 600px) {
       .collection-grid {
         grid-template-columns: 1fr;
       }
     }
+
     /* FAQ Section */
     .faq-section {
       padding: 100px 0;
       background: var(--bg-secondary);
       margin-top: 80px;
     }
+
     .faq-grid {
       max-width: 800px;
       margin: 40px auto 0;
     }
+
     .faq-item {
       margin-bottom: 20px;
       background: var(--bg);
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       border-radius: var(--radius);
       overflow: hidden;
     }
+
     [data-theme="dark"] .faq-item {
-      border-color: rgba(255,255,255,0.05);
+      border-color: rgba(255, 255, 255, 0.05);
     }
+
     .faq-question {
       padding: 20px 30px;
       display: flex;
@@ -108,50 +139,62 @@
       cursor: pointer;
       transition: var(--transition);
     }
+
     .faq-question:hover {
-      background: rgba(0,0,0,0.02);
+      background: rgba(0, 0, 0, 0.02);
     }
+
     [data-theme="dark"] .faq-question:hover {
-      background: rgba(255,255,255,0.02);
+      background: rgba(255, 255, 255, 0.02);
     }
+
     .faq-item h4 {
       margin-bottom: 0;
       font-size: 1.1rem;
       pointer-events: none;
     }
+
     .faq-question i {
       transition: transform 0.4s;
     }
+
     .faq-item.active .faq-question i {
       transform: rotate(45deg);
     }
+
     .faq-answer {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
-      background: rgba(0,0,0,0.01);
+      background: rgba(0, 0, 0, 0.01);
     }
+
     [data-theme="dark"] .faq-answer {
-      background: rgba(255,255,255,0.01);
+      background: rgba(255, 255, 255, 0.01);
     }
+
     .faq-answer p {
       padding: 0 30px 25px;
       font-size: 0.95rem;
       margin-top: 0;
     }
+
     .faq-item.active .faq-answer {
-      max-height: 500px; /* Large enough for content */
+      max-height: 500px;
+      /* Large enough for content */
     }
   </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+          class="logo-img"></a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
-          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html"
-          class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a
+          href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
+          href="shop.html" class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -166,10 +209,10 @@
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html" class="active">Shop</a><a
-        href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline"
-        style="margin-top: 20px; text-align: center;">Login</a>
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a
+        href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
+        href="shop.html" class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a
+        href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
     </div>
     <div class="drawer-actions">
       <button class="theme-toggle"><i class="ph ph-moon"></i></button>
@@ -183,9 +226,8 @@
         <p data-reveal class="stagger-1">Curated dried flowers, DIY kits, and archival framing supplies.</p>
       </div>
     </section>
-    <div class="container shop-container">
-      <aside class="shop-sidebar" data-reveal>
-        <h4>Categories</h4>
+    <div class="container">
+      <div class="shop-filter-bar" data-reveal>
         <ul class="category-list">
           <li><a href="#" class="active">All Products</a></li>
           <li><a href="#">Dried Flowers</a></li>
@@ -194,7 +236,7 @@
           <li><a href="#">Botanical Art</a></li>
           <li><a href="#">Gifts</a></li>
         </ul>
-      </aside>
+      </div>
       <div class="collection-grid">
         <div class="card" data-reveal>
           <img src="assets/images/shop-lavender-bundle.jpg" class="card-img" alt="Dried Lavender Bundle">
@@ -232,6 +274,24 @@
               onclick="addToCart({name: 'Pressed Rose Set', price: 24})">Add to Cart</button>
           </div>
         </div>
+        <div class="card" data-reveal>
+          <img src="assets/images/shop-parchment-paper.jpg" class="card-img" alt="Archival Parchment Paper">
+          <div class="card-body">
+            <h3>Archival Parchment Paper</h3>
+            <p>$12.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Parchment Paper', price: 12})">Add to Cart</button>
+          </div>
+        </div>
+        <div class="card" data-reveal>
+          <img src="assets/images/shop-botanical-wax.jpg" class="card-img" alt="Botanical Preservation Wax">
+          <div class="card-body">
+            <h3>Botanical Preservation Wax</h3>
+            <p>$32.00</p>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Preservation Wax', price: 32})">Add to Cart</button>
+          </div>
+        </div>
       </div>
     </div>
     <section class="faq-section">
@@ -247,7 +307,8 @@
               <i class="ph ph-plus"></i>
             </div>
             <div class="faq-answer">
-              <p>Our professionally dried flowers can last for years if kept out of direct sunlight and high humidity. We use archival methods to preserve their natural colors as long as possible.</p>
+              <p>Our professionally dried flowers can last for years if kept out of direct sunlight and high humidity.
+                We use archival methods to preserve their natural colors as long as possible.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal>
@@ -256,7 +317,8 @@
               <i class="ph ph-plus"></i>
             </div>
             <div class="faq-answer">
-              <p>Currently, we only ship within the continental US to ensure our delicate products and glass frames arrive in perfect condition without prolonged transit times.</p>
+              <p>Currently, we only ship within the continental US to ensure our delicate products and glass frames
+                arrive in perfect condition without prolonged transit times.</p>
             </div>
           </div>
           <div class="faq-item" data-reveal>
@@ -265,7 +327,8 @@
               <i class="ph ph-plus"></i>
             </div>
             <div class="faq-answer">
-              <p>Yes! We can tailor kits for special occasions or bulk orders. Please contact us through our inquiry form for any custom kit requests.</p>
+              <p>Yes! We can tailor kits for special occasions or bulk orders. Please contact us through our inquiry
+                form for any custom kit requests.</p>
             </div>
           </div>
         </div>
@@ -279,7 +342,8 @@
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+            class="logo-img"></a>
         <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
         <div class="social-links">
           <a href="#"><i class="ph ph-instagram-logo"></i></a>
@@ -333,8 +397,7 @@
       });
     });
   </script>
-  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n
+</body>
+
 </html>
-
-
-
