@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wedding Preservation | Bloom Botanical Studio</title>
-
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <style>
     .page-header {
       padding: 150px 0 80px;
       background-color: var(--bg-secondary);
       text-align: center;
     }
-
+    [data-theme="dark"] .page-header {
+      background-color: var(--bg);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
     .timeline {
       position: relative;
       max-width: 1000px;
       margin: 80px auto;
       padding: 40px 0;
     }
-
     .timeline::before {
       content: '';
       position: absolute;
@@ -40,7 +38,6 @@
       background: var(--color-primary);
       transform: translateX(-50%);
     }
-
     .timeline-item {
       display: flex;
       justify-content: flex-end;
@@ -48,13 +45,11 @@
       position: relative;
       margin-bottom: 60px;
     }
-
     .timeline-item:nth-child(even) {
       justify-content: flex-start;
       padding-right: 0;
       padding-left: 50%;
     }
-
     .timeline-content {
       width: 80%;
       padding: 30px;
@@ -63,7 +58,6 @@
       box-shadow: var(--shadow);
       position: relative;
     }
-
     .timeline-dot {
       position: absolute;
       top: 30px;
@@ -75,43 +69,35 @@
       z-index: 2;
       transform: translateX(-50%);
     }
-
     @media (max-width: 768px) {
       .timeline::before {
         left: 20px;
       }
-
       .timeline-item {
         padding-right: 0;
         padding-left: 50px;
         justify-content: flex-start;
       }
-
       .timeline-item:nth-child(even) {
         padding-left: 50px;
       }
-
       .timeline-content {
         width: 100%;
       }
-
       .timeline-dot {
         left: 20px !important;
         transform: translateX(-50%);
       }
     }
-
     .comparison {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px;
       margin-top: 60px;
     }
-
     .comparison-item {
       text-align: center;
     }
-
     .comparison-item img {
       border-radius: var(--radius);
       margin-bottom: 15px;
@@ -124,18 +110,16 @@
     }
   </style>
 </head>
-
 <body>
-
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="home2.html">Home 2</a>
+        <a href="home2.html">Home 2</a><a href="about.html">About</a>
         <a href="services.html">Collection</a>
         <a href="wedding.html" class="active">Wedding</a>
-        <a href="workshop.html">Workshop</a><a href="about.html">About</a>
+        <a href="workshop.html">Workshop</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -148,14 +132,13 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html">Shop</a><a
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a
         href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline"
         style="margin-top: 20px; text-align: center;">Login</a>
     </div>
@@ -164,7 +147,6 @@
       <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
     <section class="page-header">
       <div class="container">
@@ -197,7 +179,6 @@
         <h2 data-reveal>Our Preservation Process</h2>
         <p data-reveal>From bouquet to heirloom: A careful, month-long journey of artistry and preservation.</p>
       </div>
-
       <div class="timeline">
         <div class="timeline-item" data-reveal>
           <div class="timeline-dot"></div>
@@ -234,18 +215,18 @@
       </div>
     </section>
     <!-- Wedding Inquiry -->
-    <section class="container" id="inquiry">
+    <section class="container" id="inquiry" style="padding-bottom: 120px;">
       <div class="section-title">
         <h2 data-reveal>Wedding Inquiry</h2>
         <p data-reveal>Check availability for your wedding date and get a custom quote.</p>
       </div>
       <div style="max-width: 600px; margin: 0 auto;">
         <form data-reveal>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
+          <div style="display: grid; grid-template-columns: 1fr; gap: 20px; margin-bottom: 20px;">
             <input type="text" placeholder="Full Name" required
-              style="padding: 12px; border: 1px solid var(--text-muted); background: transparent; color: var(--text-primary); border-radius: var(--radius);">
+              style="width: 100%; padding: 12px; border: 1px solid var(--text-muted); background: transparent; color: var(--text-primary); border-radius: var(--radius);">
             <input type="email" placeholder="Email Address" required
-              style="padding: 12px; border: 1px solid var(--text-muted); background: transparent; color: var(--text-primary); border-radius: var(--radius);">
+              style="width: 100%; padding: 12px; border: 1px solid var(--text-muted); background: transparent; color: var(--text-primary); border-radius: var(--radius);">
           </div>
           <div style="margin-bottom: 20px;">
             <input type="date" required
@@ -259,7 +240,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
@@ -276,7 +256,7 @@
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Collection</a></li>
-          <li><a href="wedding.html">Wedding</a></li>
+          <li><a href="wedding.html" class="active">Wedding</a></li>
           <li><a href="workshop.html">Workshop</a><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
@@ -301,13 +281,12 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
-</body>
-
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 </html>
+
 
 

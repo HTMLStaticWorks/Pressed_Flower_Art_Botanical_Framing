@@ -1,20 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Register | Bloom Botanical Studio</title>
-
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
-
   <style>
     body {
       height: 100vh;
@@ -25,7 +22,6 @@
       margin: 0;
       overflow: hidden;
     }
-
     .auth-card {
       width: 100%;
       max-width: 450px;
@@ -35,18 +31,15 @@
       box-shadow: var(--shadow);
       text-align: center;
     }
-
     .auth-logo {
       margin-bottom: 20px;
       display: flex;
       justify-content: center;
     }
-
     .form-group {
       margin-bottom: 15px;
       text-align: left;
     }
-
     .form-group input {
       width: 100%;
       padding: 12px;
@@ -55,7 +48,6 @@
       color: var(--text-primary);
       border-radius: var(--radius);
     }
-
     .auth-btn {
       width: 100%;
       padding: 12px;
@@ -69,12 +61,10 @@
       margin-top: 10px;
       transition: var(--transition);
     }
-
     .auth-btn:hover {
       background: #4A5D45;
       transform: translateY(-1px);
     }
-
     .terms-group {
       display: flex;
       align-items: center;
@@ -83,24 +73,20 @@
       margin-bottom: 20px;
       color: var(--text-secondary);
     }
-
     .terms-group a {
       color: var(--color-primary);
       text-decoration: none;
       font-weight: 500;
       transition: var(--transition);
     }
-
     .terms-group a:hover {
       text-decoration: underline;
     }
-
     .social-auth {
       margin-top: 20px;
       padding-top: 20px;
       border-top: 1px solid rgba(0, 0, 0, 0.1);
     }
-
     .google-btn {
       width: 100%;
       padding: 12px;
@@ -117,11 +103,9 @@
       font-weight: 500;
       transition: var(--transition);
     }
-
     .google-btn:hover {
       background: #F8F9FA;
     }
-
     .apple-btn {
       width: 100%;
       padding: 12px;
@@ -137,21 +121,17 @@
       font-weight: 500;
       transition: var(--transition);
     }
-
     .apple-btn:hover {
       background: #2C2C2C;
       transform: translateY(-1px);
     }
-
     .auth-links {
       margin-top: 20px;
       font-size: 0.9rem;
     }
-
     .auth-links a:hover {
       text-decoration: underline;
     }
-
     .auth-toggles {
       position: absolute;
       top: 20px;
@@ -161,18 +141,14 @@
     }
   </style>
 </head>
-
 <body>
-
   <div class="auth-toggles">
     <button class="theme-toggle" title="Toggle Theme"><i class="ph ph-moon"></i></button>
     <button class="rtl-toggle" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
   </div>
-
   <div class="auth-card">
     <a href="index.html" class="auth-logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
     <h2 style="margin-bottom: 20px; font-size: 1.5rem;">Create Account</h2>
-
     <form id="registerForm">
       <div class="form-group">
         <input type="text" placeholder="Full Name" required>
@@ -202,7 +178,6 @@
       </div>
       <button type="submit" class="auth-btn">Register</button>
     </form>
-
     <div class="social-auth">
       <button class="google-btn">
         <i class="ph ph-google-logo" style="color: #4285F4; font-size: 1.2rem;"></i>
@@ -213,14 +188,13 @@
         Continue with Apple
       </button>
     </div>
-
     <div class="auth-links">
       Already have an account? <a href="login.html">Login</a>
     </div>
   </div>
-
   <script src="assets/js/main.js"></script>
-</body>
-
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 </html>
+
+
 

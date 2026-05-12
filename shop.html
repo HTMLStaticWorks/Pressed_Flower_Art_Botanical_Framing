@@ -1,76 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop | Bloom Botanical Studio</title>
-
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <style>
     .shop-header {
       padding: 150px 0 80px;
       text-align: center;
       background: var(--bg-secondary);
     }
-
     .shop-container {
       display: grid;
       grid-template-columns: 250px 1fr;
       gap: 40px;
       margin-top: 60px;
     }
-
     .shop-sidebar h4 {
       text-align: left;
       margin-bottom: 20px;
       font-size: 1.1rem;
     }
-
     .category-list li {
       margin-bottom: 12px;
     }
-
     .category-list a {
       color: var(--text-secondary);
       transition: var(--transition);
       display: inline-block;
     }
-
     .category-list a:hover {
       color: var(--color-primary);
       padding-left: 8px;
     }
-
     .category-list a.active {
       color: var(--color-primary);
       font-weight: 600;
       padding-left: 8px;
     }
-
     @media (max-width: 768px) {
       .shop-container {
         grid-template-columns: 1fr;
       }
-
       .shop-sidebar {
         order: -1;
         text-align: center;
       }
-
       .shop-sidebar h4 {
         text-align: center;
       }
-
       .category-list {
         display: flex;
         flex-wrap: wrap;
@@ -78,38 +64,32 @@
         gap: 15px;
       }
     }
-
     /* Collection Grid */
     .collection-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 30px;
     }
-
     @media (max-width: 1200px) {
       .collection-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-
     @media (max-width: 600px) {
       .collection-grid {
         grid-template-columns: 1fr;
       }
     }
-
     /* FAQ Section */
     .faq-section {
       padding: 100px 0;
       background: var(--bg-secondary);
       margin-top: 80px;
     }
-
     .faq-grid {
       max-width: 800px;
       margin: 40px auto 0;
     }
-
     .faq-item {
       margin-bottom: 20px;
       background: var(--bg);
@@ -117,11 +97,9 @@
       border-radius: var(--radius);
       overflow: hidden;
     }
-
     [data-theme="dark"] .faq-item {
       border-color: rgba(255,255,255,0.05);
     }
-
     .faq-question {
       padding: 20px 30px;
       display: flex;
@@ -130,60 +108,49 @@
       cursor: pointer;
       transition: var(--transition);
     }
-
     .faq-question:hover {
       background: rgba(0,0,0,0.02);
     }
-
     [data-theme="dark"] .faq-question:hover {
       background: rgba(255,255,255,0.02);
     }
-
     .faq-item h4 {
       margin-bottom: 0;
       font-size: 1.1rem;
       pointer-events: none;
     }
-
     .faq-question i {
       transition: transform 0.4s;
     }
-
     .faq-item.active .faq-question i {
       transform: rotate(45deg);
     }
-
     .faq-answer {
       max-height: 0;
       overflow: hidden;
       transition: max-height 0.4s ease-out;
       background: rgba(0,0,0,0.01);
     }
-
     [data-theme="dark"] .faq-answer {
       background: rgba(255,255,255,0.01);
     }
-
     .faq-answer p {
       padding: 0 30px 25px;
       font-size: 0.95rem;
       margin-top: 0;
     }
-
     .faq-item.active .faq-answer {
       max-height: 500px; /* Large enough for content */
     }
   </style>
 </head>
-
 <body>
-
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html"
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
+          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html"
           class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
@@ -194,14 +161,13 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html">Shop</a><a
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html" class="active">Shop</a><a
         href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline"
         style="margin-top: 20px; text-align: center;">Login</a>
     </div>
@@ -210,7 +176,6 @@
       <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
     <section class="shop-header">
       <div class="container">
@@ -218,7 +183,6 @@
         <p data-reveal class="stagger-1">Curated dried flowers, DIY kits, and archival framing supplies.</p>
       </div>
     </section>
-
     <div class="container shop-container">
       <aside class="shop-sidebar" data-reveal>
         <h4>Categories</h4>
@@ -231,7 +195,6 @@
           <li><a href="#">Gifts</a></li>
         </ul>
       </aside>
-
       <div class="collection-grid">
         <div class="card" data-reveal>
           <img src="assets/images/shop-lavender-bundle.jpg" class="card-img" alt="Dried Lavender Bundle">
@@ -271,7 +234,6 @@
         </div>
       </div>
     </div>
-
     <section class="faq-section">
       <div class="container">
         <div class="section-title">
@@ -309,13 +271,11 @@
         </div>
       </div>
     </section>
-
     <!-- STRIPE_INTEGRATION -->
     <div class="container" style="text-align: center; margin-top: 80px;">
       <!-- <button id="checkout-button">Pay with Stripe</button> -->
     </div>
   </main>
-
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
@@ -357,17 +317,15 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
   <script>
     document.querySelectorAll('.faq-question').forEach(question => {
       question.addEventListener('click', () => {
         const item = question.parentElement;
         item.classList.toggle('active');
-        
         // Optional: Close other open items
         document.querySelectorAll('.faq-item').forEach(otherItem => {
           if (otherItem !== item) otherItem.classList.remove('active');
@@ -375,8 +333,8 @@
       });
     });
   </script>
-</body>
-
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 </html>
+
 
 

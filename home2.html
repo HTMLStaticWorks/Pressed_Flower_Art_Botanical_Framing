@@ -5,17 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloom | Editorial Journal</title>
-
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <style>
     .editorial-hero {
       height: 100vh;
@@ -203,7 +202,7 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .process-grid > div:last-child {
+      .process-grid>div:last-child {
         grid-column: span 2;
         justify-self: center;
         max-width: calc(50% - 20px);
@@ -215,7 +214,7 @@
         grid-template-columns: 1fr;
       }
 
-      .process-grid > div:last-child {
+      .process-grid>div:last-child {
         grid-column: auto;
         max-width: 100%;
       }
@@ -224,18 +223,17 @@
 </head>
 
 <body>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+          class="logo-img"></a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="home2.html" class="active">Home 2</a>
+        <a href="home2.html" class="active">Home 2</a><a href="about.html">About</a>
         <a href="services.html">Collection</a>
         <a href="wedding.html">Wedding</a>
         <a href="workshop.html">Workshop</a>
-        <a href="about.html">About</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -250,18 +248,16 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer (Identical to index) -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
       <a href="index.html">Home</a>
-      <a href="home2.html">Home 2</a>
+      <a href="home2.html" class="active">Home 2</a><a href="about.html">About</a>
       <a href="services.html">Collection</a>
       <a href="wedding.html">Wedding</a>
       <a href="workshop.html">Workshop</a>
-      <a href="about.html">About</a>
       <a href="shop.html">Shop</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
@@ -272,7 +268,6 @@
       <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
     <section class="editorial-hero">
       <div class="editorial-hero-img" data-reveal></div>
@@ -286,13 +281,11 @@
         </div>
       </div>
     </section>
-
     <section class="container featured-journal">
       <div class="section-title">
         <h2 data-reveal>Curated Highlights</h2>
       </div>
       <div class="journal-grid">
-
         <div class="journal-main-card" data-reveal>
           <img src="assets/images/journal-herbarium.jpg" alt="Main Journal">
           <div class="journal-main-overlay">
@@ -302,7 +295,6 @@
               style="border-color: white; color: white; margin-top: 20px;">Read More</a>
           </div>
         </div>
-
         <div class="journal-side-grid">
           <div class="card" data-reveal>
             <img src="assets/images/journal-winter-blooms.jpg" alt="Winter Blooms"
@@ -321,9 +313,70 @@
             </div>
           </div>
         </div>
-
       </div>
     </section>
+    <!-- Seasonal Availability -->
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>Seasonal Availability</h2>
+          <p data-reveal>Our botanicals follow nature's calendar. Here's what's available to press and frame each
+            season.</p>
+        </div>
+
+        <div data-reveal style="overflow-x: auto;">
+          <table style="width: 100%; border-collapse: collapse; font-family: var(--font-sans);">
+
+            <thead>
+              <tr style="border-bottom: 1px solid var(--color-primary);">
+                <th
+                  style="padding: 18px 24px; text-align: left; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--text-primary); width: 25%;">
+                  Season</th>
+                <th
+                  style="padding: 18px 24px; text-align: left; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--text-primary); width: 40%;">
+                  Featured Botanicals</th>
+                <th
+                  style="padding: 18px 24px; text-align: left; font-family: var(--font-serif); font-size: 1.1rem; font-weight: 500; color: var(--text-primary); width: 35%;">
+                  Best For</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+                <td
+                  style="padding: 24px; color: var(--color-primary); font-family: var(--font-serif); font-size: 1.1rem;">
+                  Spring</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Cherry Blossom, Ranunculus, Sweet Pea, Lily of
+                  the Valley</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Wedding bouquets, anniversary gifts</td>
+              </tr>
+              <tr style="border-bottom: 1px solid rgba(0,0,0,0.06);">
+                <td
+                  style="padding: 24px; color: var(--color-primary); font-family: var(--font-serif); font-size: 1.1rem;">
+                  Summer</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Lavender, Sunflower, Dahlia, Wildflower Meadow
+                  Mix</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Statement frames, studio collections</td>
+              </tr>
+              <tr>
+                <td
+                  style="padding: 24px; color: var(--color-primary); font-family: var(--font-serif); font-size: 1.1rem;">
+                  Autumn</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Maple Leaf, Dried Fern, Cosmos, Japanese
+                  Anemone</td>
+                <td style="padding: 24px; color: var(--text-secondary);">Home décor, seasonal gifting</td>
+              </tr>
+            </tbody>
+
+          </table>
+        </div>
+
+        <div style="text-align: center; margin-top: 50px;" data-reveal>
+          <a href="shop.html" class="btn btn-primary">Shop Current Season</a>
+        </div>
+      </div>
+    </section>
+
     <!-- how it works -->
     <section style="padding: 100px 0;">
       <div class="container">
@@ -331,9 +384,7 @@
           <h2 data-reveal>How It Works</h2>
           <p data-reveal>From a fresh bloom to a framed heirloom — our three-step preservation process.</p>
         </div>
-
         <div class="process-grid">
-
           <div data-reveal class="stagger-1" style="text-align: center;">
             <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
               <img src="assets/images/process-step1.jpg" alt="Step 1 - Collect"
@@ -350,7 +401,6 @@
             <p style="font-size: 0.95rem;">Choose your blooms at their peak. We guide you on the best specimens for
               lasting colour and structure.</p>
           </div>
-
           <div data-reveal class="stagger-2" style="text-align: center;">
             <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
               <img src="assets/images/process-step2.jpg" alt="Step 2 - Press"
@@ -367,7 +417,6 @@
             <p style="font-size: 0.95rem;">Using traditional high-pressure techniques, each petal and stem is carefully
               flattened and dried over several weeks.</p>
           </div>
-
           <div data-reveal class="stagger-3" style="text-align: center;">
             <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
               <img src="assets/images/process-step3.jpg" alt="Step 3 - Frame"
@@ -384,15 +433,12 @@
             <p style="font-size: 0.95rem;">Mounted on archival paper and sealed behind UV-protective glass, your
               botanical art is ready to be cherished for generations.</p>
           </div>
-
         </div>
-
         <div style="text-align: center; margin-top: 60px;" data-reveal>
           <a href="services.html" class="btn btn-primary">Explore the Collection</a>
         </div>
       </div>
     </section>
-
     <section style="background: var(--bg-secondary); padding: 100px 0;">
       <div class="container" style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
         <div style="flex: 1; min-width: 300px; text-align: center;" data-reveal>
@@ -410,12 +456,12 @@
       </div>
     </section>
   </main>
-
   <!-- Footer (Identical to index) -->
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+            class="logo-img"></a>
         <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
         <div class="social-links">
           <a href="#"><i class="ph-instagram-logo"></i></a>
@@ -453,12 +499,11 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
-</body>
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 
 </html>
 

@@ -1,24 +1,24 @@
 <svg width="400" height="100" viewBox="0 0 400 100" role="img" xmlns="http://www.w3.org/2000/svg">
   <title>Bloom Botanical Studio</title>
-  <desc>Horizontal logo lockup — pressed fern icon beside the Bloom wordmark, all in primary sage green #5F6F52</desc>
+  <desc>Horizontal logo lockup — pressed fern icon beside the Bloom wordmark in vibrant botanical green</desc>
 
   <!-- Central stem -->
-  <path d="M55 82 C53 64 51 44 55 14" stroke="#5F6F52" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+  <path d="M55 82 C53 64 51 44 55 14" stroke="#7A9E6E" stroke-width="1.8" fill="none" stroke-linecap="round"/>
 
   <!-- Left leaflets -->
-  <path d="M54 70 C43 63 36 53 38 43 C44 47 52 58 54 67" fill="#5F6F52"/>
-  <path d="M54 54 C40 45 31 33 34 21 C41 27 52 42 54 51" fill="#5F6F52"/>
+  <path d="M54 70 C43 63 36 53 38 43 C44 47 52 58 54 67" fill="#7A9E6E"/>
+  <path d="M54 54 C40 45 31 33 34 21 C41 27 52 42 54 51" fill="#7A9E6E"/>
 
   <!-- Right leaflets -->
-  <path d="M56 66 C67 59 74 49 72 39 C66 43 58 54 56 63" fill="#5F6F52"/>
-  <path d="M56 50 C69 41 78 29 75 17 C68 23 57 38 56 47" fill="#5F6F52"/>
+  <path d="M56 66 C67 59 74 49 72 39 C66 43 58 54 56 63" fill="#7A9E6E"/>
+  <path d="M56 50 C69 41 78 29 75 17 C68 23 57 38 56 47" fill="#7A9E6E"/>
 
   <!-- Top bud -->
-  <ellipse cx="55" cy="13" rx="3.5" ry="6" fill="#5F6F52" transform="rotate(-4, 55, 13)"/>
+  <ellipse cx="55" cy="13" rx="3.5" ry="6" fill="#7A9E6E" transform="rotate(-4, 55, 13)"/>
 
   <!-- Divider -->
-  <line x1="88" y1="14" x2="88" y2="82" stroke="#5F6F52" stroke-width="0.6" opacity="0.35"/>
+  <line x1="88" y1="14" x2="88" y2="82" stroke="#7A9E6E" stroke-width="0.6" opacity="0.4"/>
 
   <!-- Wordmark -->
-  <text x="100" y="68" fill="#5F6F52" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400" letter-spacing="-0.5">Bloom</text>
+  <text x="100" y="68" fill="#7A9E6E" font-family="Georgia, 'Times New Roman', serif" font-size="52" font-weight="400" letter-spacing="-0.5">Bloom</text>
 </svg>

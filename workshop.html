@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Workshops | Bloom Botanical Studio</title>
-
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <style>
     .workshop-header {
       padding: 150px 0 80px;
       text-align: center;
       background: var(--bg-secondary);
     }
-
+    [data-theme="dark"] .workshop-header {
+      background-color: var(--bg);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
     .workshop-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 40px;
       margin-top: 60px;
     }
-
     @media (max-width: 991px) {
       .workshop-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -40,7 +38,6 @@
         max-width: calc(50% - 20px);
       }
     }
-
     @media (max-width: 600px) {
       .workshop-grid {
         grid-template-columns: 1fr;
@@ -50,7 +47,6 @@
         max-width: 100%;
       }
     }
-
     .workshop-card {
       background: var(--bg);
       border: 1px solid rgba(0, 0, 0, 0.05);
@@ -61,16 +57,13 @@
       height: 100%;
       transition: var(--transition);
     }
-
     [data-theme="dark"] .workshop-card {
       border-color: rgba(255, 255, 255, 0.05);
     }
-
     .workshop-card:hover {
       transform: translateY(-10px);
       box-shadow: var(--shadow);
     }
-
     .workshop-date {
       color: var(--color-primary);
       font-weight: 600;
@@ -78,7 +71,6 @@
       letter-spacing: 2px;
       margin-bottom: 15px;
     }
-
     .workshop-spots {
       margin-top: auto;
       padding-top: 20px;
@@ -87,11 +79,9 @@
       justify-content: space-between;
       align-items: center;
     }
-
     [data-theme="dark"] .workshop-spots {
       border-top-color: rgba(255, 255, 255, 0.05);
     }
-
     .spots-badge {
       padding: 4px 12px;
       background: #FFEBEB;
@@ -100,7 +90,6 @@
       border-radius: 20px;
       font-weight: 600;
     }
-
     .progress-bar {
       width: 100%;
       height: 4px;
@@ -109,7 +98,6 @@
       border-radius: 2px;
       overflow: hidden;
     }
-
     .progress-fill {
       height: 100%;
       background: var(--color-primary);
@@ -120,7 +108,6 @@
       gap: 60px;
       align-items: center;
     }
-
     @media (max-width: 600px) {
       .private-sessions-grid {
         grid-template-columns: 1fr;
@@ -129,18 +116,16 @@
     }
   </style>
 </head>
-
 <body>
-
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
       <nav class="nav-links">
         <a href="index.html">Home</a>
-        <a href="home2.html">Home 2</a>
+        <a href="home2.html">Home 2</a><a href="about.html">About</a>
         <a href="services.html">Collection</a>
         <a href="wedding.html">Wedding</a>
-        <a href="workshop.html" class="active">Workshop</a><a href="about.html">About</a>
+        <a href="workshop.html" class="active">Workshop</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -153,14 +138,13 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html">Shop</a><a
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html">About</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html" class="active">Workshop</a><a href="shop.html">Shop</a><a
         href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline"
         style="margin-top: 20px; text-align: center;">Login</a>
     </div>
@@ -169,7 +153,6 @@
       <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
     <section class="workshop-header">
       <div class="container">
@@ -203,7 +186,6 @@
       <div class="section-title">
         <h2 data-reveal>Upcoming Sessions</h2>
       </div>
-
       <div class="workshop-grid">
         <div class="workshop-card" data-reveal class="stagger-1">
           <span class="workshop-date">May 15, 2024 | 10:00 AM</span>
@@ -219,7 +201,6 @@
           </div>
           <button class="btn btn-primary" style="margin-top: 25px;">Book Now</button>
         </div>
-
         <div class="workshop-card" data-reveal class="stagger-2">
           <span class="workshop-date">May 22, 2024 | 2:00 PM</span>
           <h3 style="text-align: left; margin-bottom: 15px;">Botanical Composition Art</h3>
@@ -234,7 +215,6 @@
           </div>
           <button class="btn btn-primary" style="margin-top: 25px;">Book Now</button>
         </div>
-
         <div class="workshop-card" data-reveal class="stagger-3">
           <span class="workshop-date">June 05, 2024 | 11:00 AM</span>
           <h3 style="text-align: left; margin-bottom: 15px;">Advanced Framing Techniques</h3>
@@ -251,10 +231,7 @@
         </div>
       </div>
     </section>
-
-
   </main>
-
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
@@ -296,16 +273,14 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
   <!-- Calendly Integration Placeholder -->
   <!-- <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script> -->
-
   <script src="assets/js/main.js"></script>
-</body>
-
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 </html>
+
 
 

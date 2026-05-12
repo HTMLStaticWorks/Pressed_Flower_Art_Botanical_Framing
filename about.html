@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Bloom Botanical Studio</title>
-
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <style>
-    .about-hero {
+    .about-hero-section {
       padding: 180px 0 100px;
       text-align: center;
+      background: var(--bg);
     }
-
+    [data-theme="dark"] .about-hero-section {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -29,17 +28,14 @@
       align-items: center;
       margin-bottom: 120px;
     }
-
     .timeline-simple {
       margin: 80px 0;
     }
-
     .timeline-row {
       display: flex;
       gap: 40px;
       margin-bottom: 40px;
     }
-
     .timeline-year {
       font-family: var(--font-serif);
       font-size: 2rem;
@@ -47,34 +43,29 @@
       flex-shrink: 0;
       width: 100px;
     }
-
     @media (max-width: 768px) {
       .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
         margin-bottom: 80px;
       }
-
       .about-content h2 {
         text-align: center !important;
       }
-
       .about-content p {
         text-align: center;
       }
     }
   </style>
 </head>
-
 <body>
-
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html"
-          class="active">About</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html"
+          class="active">About</a><a href="services.html">Collection</a><a
+          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a
           href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
@@ -85,14 +76,13 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
         href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html"
         class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
     </div>
@@ -101,27 +91,28 @@
       <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
-    <section class="about-hero container">
-      <h1 data-reveal>Our Story</h1>
-      <p data-reveal class="stagger-1">The passion behind preserving nature's most delicate moments.</p>
-    </section>
-
-    <section class="container about-content">
-      <div data-reveal>
-        <img src="assets/images/about-artist-at-work.jpg" alt="Artist at work" style="border-radius: var(--radius);">
-      </div>
-      <div data-reveal>
-        <h2 style="text-align: left;">Archiving Nature's Beauty</h2>
-        <p style="margin: 25px 0;">Founded in 2018, Bloom began as a small herbarium project in a sun-drenched studio.
-          Our founder, Elena Thorne, was inspired by the ancient Japanese art of Oshibana and the desire to make the
-          fleeting beauty of a wedding bouquet last forever.</p>
-        <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern archival
-          framing to create museum-quality art for homes around the world.</p>
+    <section class="about-hero-section">
+      <div class="container">
+        <h1 data-reveal>Our Story</h1>
+        <p data-reveal class="stagger-1">The passion behind preserving nature's most delicate moments.</p>
       </div>
     </section>
-
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container about-content" style="margin-bottom: 0;">
+        <div data-reveal>
+          <img src="assets/images/about-artist-at-work.jpg" alt="Artist at work" style="border-radius: var(--radius);">
+        </div>
+        <div data-reveal>
+          <h2 style="text-align: left;">Archiving Nature's Beauty</h2>
+          <p style="margin: 25px 0;">Founded in 2018, Bloom began as a small herbarium project in a sun-drenched studio.
+            Our founder, Elena Thorne, was inspired by the ancient Japanese art of Oshibana and the desire to make the
+            fleeting beauty of a wedding bouquet last forever.</p>
+          <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern archival
+            framing to create museum-quality art for homes around the world.</p>
+        </div>
+      </div>
+    </section>
     <section style="background: var(--bg-secondary); padding: 100px 0;">
       <div class="container">
         <div class="section-title">
@@ -152,7 +143,6 @@
         </div>
       </div>
     </section>
-
     <section class="container">
       <div class="section-title">
         <h2 data-reveal>Meet the Artist</h2>
@@ -169,7 +159,6 @@
       </div>
     </section>
   </main>
-
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
@@ -211,12 +200,12 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
   <script src="assets/js/main.js"></script>
-</body>
-
+  <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n</body>
 </html>
+
+
 

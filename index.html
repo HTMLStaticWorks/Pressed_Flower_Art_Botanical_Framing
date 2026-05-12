@@ -7,21 +7,19 @@
   <title>Bloom | Pressed Flower Art & Botanical Framing</title>
   <meta name="description"
     content="Bloom is a premium botanical studio specializing in pressed flower art, wedding bouquet preservation, and artisanal framing. Discover the beauty of nature preserved forever.">
-
   <!-- Fonts -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">`n
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
     rel="stylesheet">
-
   <!-- Icons -->
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
-
   <!-- CSS -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-
   <!-- JSON-LD Structured Data -->
   <script type="application/ld+json">
   {
@@ -58,7 +56,6 @@
     ]
   }
   </script>
-
   <style>
     /* Hero Specific */
     .hero {
@@ -83,7 +80,7 @@
       height: 100%;
       z-index: 1;
       opacity: 0.6;
-      background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=2070') no-repeat center center;
+      background: url('assets/images/hero-bg.jpg') no-repeat center center;
       background-size: cover;
       transform: scale(1.1);
       transition: transform 10s ease-out;
@@ -116,6 +113,40 @@
       display: flex;
       gap: 20px;
       justify-content: center;
+    }
+
+    .hero-btns .btn-outline {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
+      border-color: var(--color-primary);
+      color: var(--color-primary);
+    }
+
+    [data-theme="dark"] .hero-btns .btn-outline {
+      background: rgba(0, 0, 0, 0.5);
+      border-color: var(--text-primary);
+      color: var(--text-primary);
+    }
+
+    .hero-btns .btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    [data-theme="dark"] .hero-btns .btn:hover {
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.05);
+    }
+
+    .journal-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    @media (min-width: 768px) {
+      .journal-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
 
     /* Floating Petals */
@@ -238,24 +269,21 @@
 </head>
 
 <body>
-
   <!-- Navbar -->
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
-
+      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+          class="logo-img"></a>
       <nav class="nav-links">
         <a href="index.html" class="active">Home</a>
-        <a href="home2.html">Home 2</a>
+        <a href="home2.html">Home 2</a><a href="about.html">About</a>
         <a href="services.html">Collection</a>
         <a href="wedding.html">Wedding</a>
         <a href="workshop.html">Workshop</a>
-        <a href="about.html">About</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
       </nav>
-
       <div class="nav-actions">
         <button class="rtl-toggle" title="Switch RTL/LTR"><i class="ph ph-arrows-left-right"></i></button>
         <button class="theme-toggle" title="Toggle Theme"><i class="ph ph-moon"></i></button>
@@ -268,18 +296,16 @@
       </div>
     </div>
   </header>
-
   <!-- Mobile Drawer -->
   <div class="drawer-overlay"></div>
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a>
-      <a href="home2.html">Home 2</a>
+      <a href="index.html" class="active">Home</a>
+      <a href="home2.html">Home 2</a><a href="about.html">About</a>
       <a href="services.html">Collection</a>
       <a href="wedding.html">Wedding</a>
       <a href="workshop.html">Workshop</a>
-      <a href="about.html">About</a>
       <a href="shop.html">Shop</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
@@ -290,7 +316,6 @@
       <button class="rtl-toggle" title="Toggle RTL"><i class="ph ph-arrows-left-right"></i></button>
     </div>
   </div>
-
   <main>
     <!-- Hero Section -->
     <section class="hero revealed" id="home">
@@ -301,18 +326,16 @@
       <div class="petal" style="left: 50%; animation-delay: 2s;"></div>
       <div class="petal" style="left: 70%; animation-delay: 8s;"></div>
       <div class="petal" style="left: 90%; animation-delay: 3s;"></div>
-
       <div class="hero-content">
         <h1 data-reveal class="stagger-1">Ephemeral Beauty, <br> Eternally Framed</h1>
         <p data-reveal class="stagger-2">Artisanal botanical preservation and custom framing for life's most precious
           blooms.</p>
         <div class="hero-btns" data-reveal class="stagger-3">
-          <a href="services.html" class="btn btn-primary">Explore the Collection</a>
+          <a href="services.html" class="btn btn-primary">Explore Collection</a>
           <a href="workshop.html" class="btn btn-outline">Book a Workshop</a>
         </div>
       </div>
     </section>
-
     <!-- Signature Collection -->
     <section class="container">
       <div class="section-title">
@@ -347,7 +370,6 @@
         </div>
       </div>
     </section>
-
     <!-- Stats Section -->
     <section class="container">
       <div class="stats-grid">
@@ -378,6 +400,65 @@
       </div>
     </section>
 
+
+    <!-- From the Journal -->
+    <section class="container">
+      <div class="section-title">
+        <h2 data-reveal>From the Journal</h2>
+        <p data-reveal>Seasonal inspiration, care guides, and stories from the studio.</p>
+      </div>
+
+      <div class="journal-grid">
+
+        <article class="card" data-reveal style="display: flex; flex-direction: column;">
+          <img src="assets/images/blog-pressing-technique.jpg" alt="The Art of Pressing" class="card-img">
+          <div class="card-body"
+            style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <p
+              style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+              April 12, 2025 &nbsp;·&nbsp; Technique</p>
+            <h3 class="card-title" style="margin-bottom: 12px;">The Art of Pressing: Why Timing Is Everything</h3>
+            <p class="card-text" style="flex: 1;">The moment you pick a bloom determines everything about how it will
+              look decades from now. We break down exactly when — and how — to harvest for the best results.</p>
+            <a href="blog-single.html" class="btn btn-outline" style="margin-top: 20px;">Read Article</a>
+          </div>
+        </article>
+
+        <article class="card" data-reveal style="display: flex; flex-direction: column;">
+          <img src="assets/images/blog-botanical-care.jpg" alt="Caring for Botanical Art" class="card-img">
+          <div class="card-body"
+            style="flex: 1; display: flex; flex-direction: column; align-items: center; text-align: center;">
+            <p
+              style="font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px;">
+              March 28, 2025 &nbsp;·&nbsp; Care Guide</p>
+            <h3 class="card-title" style="margin-bottom: 12px;">How to Care for Your Framed Botanical Piece</h3>
+            <p class="card-text" style="flex: 1;">Light, humidity, and positioning all affect the longevity of pressed
+              botanicals. Here's our studio guide to keeping your artwork pristine for years to come.</p>
+            <a href="blog-single.html" class="btn btn-outline" style="margin-top: 20px;">Read Article</a>
+          </div>
+        </article>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- Brand Manifesto -->
+    <section class="container" style="text-align: center; max-width: 800px; padding: 120px 0;">
+
+      <h2 data-reveal
+        style="font-family: var(--font-serif); font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.4; font-weight: 400; font-style: italic; color: var(--text-primary); margin-bottom: 30px;">
+        "We believe every bloom holds a story worth keeping — a wedding morning, a garden in full sun, a quiet walk
+        through the woods. Our work is simply to make sure it lasts."
+      </h2>
+      <div style="width: 50px; height: 1px; background: var(--color-primary); margin: 0 auto 24px;"></div>
+      <p data-reveal
+        style="font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-primary);">—
+        Clara Bloom, Founder</p>
+    </section>
+
     <!-- Wedding Preservation -->
     <section style="background-color: var(--bg-secondary);">
       <div class="container wedding-grid">
@@ -404,12 +485,12 @@
               Archival UV-protection glass
             </li>
           </ul>
-          <a href="wedding.html" class="btn btn-primary" data-reveal>Start Your Preservation</a>
+          <div style="text-align: center;" data-reveal>
+            <a href="wedding.html" class="btn btn-primary">Start Your Preservation</a>
+          </div>
         </div>
       </div>
     </section>
-
-
 
     <!-- Testimonials -->
     <section style="background-color: var(--bg-secondary);">
@@ -418,57 +499,41 @@
           <h2 data-reveal>Client Stories</h2>
         </div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-
-          <div class="card"
-            style="padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center; overflow: hidden;"
-            data-reveal>
-            <img src="assets/images/testimonial-sarah.jpg" alt="Sarah J."
-              style="width: 100%; height: 260px; object-fit: cover; object-position: top; display: block;" />
-            <div
-              style="padding: 1.75rem 2rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.9rem;">
-              <p style="font-size: 14px; font-weight: 600; margin: 0;">Sarah J.</p>
-              <p style="font-size: 11px; color: rgba(0,0,0,0.5); margin: -4px 0 0; letter-spacing: 0.04em;">Wedding
-                Client</p>
-              <div style="width: 32px; height: 1px; background: rgba(0,0,0,0.15);"></div>
-              <div style="font-size: 20px; color: #C9A84C; letter-spacing: 4px;">★★★★★</div>
-              <p style="font-style: italic; line-height: 1.8; margin: 0;">"The way they preserved my bridal bouquet was
+          <div class="testimonial-card" data-reveal>
+            <img src="assets/images/testimonial-sarah.jpg" alt="Sarah J." class="testimonial-img" />
+            <div class="testimonial-body">
+              <p class="testimonial-name">Sarah J.</p>
+              <p class="testimonial-role">Wedding Client</p>
+              <div class="testimonial-divider"></div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"The way they preserved my bridal bouquet was
                 beyond words. It's now the centerpiece of our home and looks just as vibrant as the day I walked down
                 the aisle."</p>
             </div>
           </div>
-
-          <div class="card"
-            style="padding: 0; display: flex; flex-direction: column; align-items: center; text-align: center; overflow: hidden;"
-            data-reveal>
-            <img src="assets/images/testimonial-michael.jpg" alt="Michael R."
-              style="width: 100%; height: 260px; object-fit: cover; object-position: top; display: block;" />
-            <div
-              style="padding: 1.75rem 2rem 2rem; display: flex; flex-direction: column; align-items: center; gap: 0.9rem;">
-              <p style="font-size: 14px; font-weight: 600; margin: 0;">Michael R.</p>
-              <p style="font-size: 11px; color: rgba(0,0,0,0.5); margin: -4px 0 0; letter-spacing: 0.04em;">Workshop
-                Attendee</p>
-              <div style="width: 32px; height: 1px; background: rgba(0,0,0,0.15);"></div>
-              <div style="font-size: 20px; color: #C9A84C; letter-spacing: 4px;">★★★★★</div>
-              <p style="font-style: italic; line-height: 1.8; margin: 0;">"Attending the workshop was a soul-soothing
+          <div class="testimonial-card" data-reveal>
+            <img src="assets/images/testimonial-michael.jpg" alt="Michael R." class="testimonial-img" />
+            <div class="testimonial-body">
+              <p class="testimonial-name">Michael R.</p>
+              <p class="testimonial-role">Workshop Attendee</p>
+              <div class="testimonial-divider"></div>
+              <div class="testimonial-stars">★★★★★</div>
+              <p class="testimonial-text">"Attending the workshop was a soul-soothing
                 experience. Learning the delicate art of pressing flowers has given me a new hobby that connects me to
                 nature."</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
     <!-- Workshop CTA -->
     <section class="container" style="text-align: center;">
       <div
         style="background: var(--color-accent); color: white; padding: 100px 40px; border-radius: var(--radius); overflow: hidden; position: relative;">
-
         <div style="position: absolute; top: 0; right: 0; width: 100%; height: 100%;
   background: url('assets/images/workshop-hands.jpg') no-repeat center center;
   background-size: cover; opacity: 0.2;">
         </div>
-
         <div style="position: relative; z-index: 2;">
           <h2 data-reveal style="color: white; margin-bottom: 20px;">Join Our Next Workshop</h2>
           <p data-reveal style="color: rgba(255,255,255,0.8); max-width: 600px; margin: 0 auto 40px;">
@@ -481,16 +546,15 @@
             <a href="contact.html" class="btn btn-outline" style="border-color: white; color: white;">Inquire now</a>
           </div>
         </div>
-
       </div>
     </section>
   </main>
-
   <!-- Footer -->
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+            class="logo-img"></a>
         <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
         <div class="social-links">
           <a href="#"><i class="ph ph-instagram-logo"></i></a>
@@ -528,14 +592,12 @@
       </div>
     </div>
     <div class="container copyright">
-      <p>&copy; 2024 Bloom Botanical Studio. All Rights Reserved.</p>
+      <p>&copy; 2026 Bloom Botanical Studio. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <!-- Scripts -->
+    <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>`n  <!-- Scripts -->
   <script src="assets/js/main.js"></script>
 </body>
 
 </html>
-
 
