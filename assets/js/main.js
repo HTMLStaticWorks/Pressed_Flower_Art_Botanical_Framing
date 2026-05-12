@@ -153,4 +153,21 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Password Toggle
+  const passwordToggles = document.querySelectorAll('.password-toggle');
+  passwordToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const input = toggle.parentElement.querySelector('input');
+      const icon = toggle.querySelector('i');
+      
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.className = 'ph ph-eye-slash';
+      } else {
+        input.type = 'password';
+        icon.className = 'ph ph-eye';
+      }
+    });
+  });
 });

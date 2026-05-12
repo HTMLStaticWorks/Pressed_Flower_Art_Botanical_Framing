@@ -1,42 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop | Bloom Botanical Studio</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-  
+
   <style>
-    .shop-header { padding: 150px 0 80px; text-align: center; background: var(--bg-secondary); }
-    .shop-container { display: grid; grid-template-columns: 250px 1fr; gap: 40px; margin-top: 60px; }
-    
-    .shop-sidebar h4 { text-align: left; margin-bottom: 20px; font-size: 1.1rem; }
-    .category-list li { margin-bottom: 12px; }
-    .category-list a { color: var(--text-secondary); }
-    .category-list a.active { color: var(--color-primary); font-weight: 600; }
+    .shop-header {
+      padding: 150px 0 80px;
+      text-align: center;
+      background: var(--bg-secondary);
+    }
+
+    .shop-container {
+      display: grid;
+      grid-template-columns: 250px 1fr;
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    .shop-sidebar h4 {
+      text-align: left;
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .category-list li {
+      margin-bottom: 12px;
+    }
+
+    .category-list a {
+      color: var(--text-secondary);
+      transition: var(--transition);
+      display: inline-block;
+    }
+
+    .category-list a:hover {
+      color: var(--color-primary);
+      padding-left: 8px;
+    }
+
+    .category-list a.active {
+      color: var(--color-primary);
+      font-weight: 600;
+      padding-left: 8px;
+    }
 
     @media (max-width: 768px) {
-      .shop-container { grid-template-columns: 1fr; }
-      .shop-sidebar { order: -1; text-align: center; }
-      .shop-sidebar h4 { text-align: center; }
-      .category-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+      .shop-container {
+        grid-template-columns: 1fr;
+      }
+
+      .shop-sidebar {
+        order: -1;
+        text-align: center;
+      }
+
+      .shop-sidebar h4 {
+        text-align: center;
+      }
+
+      .category-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+      }
+    }
+
+    /* Collection Grid */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 1200px) {
+      .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* FAQ Section */
+    .faq-section {
+      padding: 100px 0;
+      background: var(--bg-secondary);
+      margin-top: 80px;
+    }
+
+    .faq-grid {
+      max-width: 800px;
+      margin: 40px auto 0;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+      background: var(--bg);
+      border: 1px solid rgba(0,0,0,0.05);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .faq-item {
+      border-color: rgba(255,255,255,0.05);
+    }
+
+    .faq-question {
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .faq-question:hover {
+      background: rgba(0,0,0,0.02);
+    }
+
+    [data-theme="dark"] .faq-question:hover {
+      background: rgba(255,255,255,0.02);
+    }
+
+    .faq-item h4 {
+      margin-bottom: 0;
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+
+    .faq-question i {
+      transition: transform 0.4s;
+    }
+
+    .faq-item.active .faq-question i {
+      transform: rotate(45deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out;
+      background: rgba(0,0,0,0.01);
+    }
+
+    [data-theme="dark"] .faq-answer {
+      background: rgba(255,255,255,0.01);
+    }
+
+    .faq-answer p {
+      padding: 0 30px 25px;
+      font-size: 0.95rem;
+      margin-top: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px; /* Large enough for content */
     }
   </style>
 </head>
+
 <body>
 
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">Bloom</a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html" class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
+          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html"
+          class="active">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -52,7 +200,10 @@
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a href="shop.html">Shop</a><a
+        href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline"
+        style="margin-top: 20px; text-align: center;">Login</a>
     </div>
     <div class="drawer-actions">
       <button class="theme-toggle"><i class="ph ph-moon"></i></button>
@@ -83,43 +234,85 @@
 
       <div class="collection-grid">
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <img src="assets/images/shop-lavender-bundle.jpg" class="card-img" alt="Dried Lavender Bundle">
           <div class="card-body">
             <h3>Dried Lavender Bundle</h3>
             <p>$18.00</p>
-            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Lavender Bundle', price: 18})">Add to Cart</button>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Lavender Bundle', price: 18})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <img src="assets/images/shop-pressing-kit.jpg" class="card-img" alt="Botanical Pressing Kit">
           <div class="card-body">
             <h3>Botanical Pressing Kit</h3>
             <p>$45.00</p>
-            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Pressing Kit', price: 45})">Add to Cart</button>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Pressing Kit', price: 45})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1591123720164-de1348028a82?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <img src="assets/images/shop-oak-frame.jpg" class="card-img" alt="Archival Oak Frame">
           <div class="card-body">
             <h3>Archival Oak Frame</h3>
             <p>$55.00</p>
-            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Oak Frame', price: 55})">Add to Cart</button>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Oak Frame', price: 55})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1516102228333-820892095697?auto=format&fit=crop&q=80&w=800" class="card-img" alt="Product">
+          <img src="assets/images/shop-pressed-rose-set.jpg" class="card-img" alt="Pressed Rose Set">
           <div class="card-body">
             <h3>Pressed Rose Set</h3>
             <p>$24.00</p>
-            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;" onclick="addToCart({name: 'Pressed Rose Set', price: 24})">Add to Cart</button>
+            <button class="btn btn-primary" style="margin-top: 15px; width: 100%;"
+              onclick="addToCart({name: 'Pressed Rose Set', price: 24})">Add to Cart</button>
           </div>
         </div>
       </div>
     </div>
 
+    <section class="faq-section">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>Common Questions</h2>
+          <p data-reveal>Everything you need to know about our botanical supplies.</p>
+        </div>
+        <div class="faq-grid">
+          <div class="faq-item" data-reveal>
+            <div class="faq-question">
+              <h4>How long do the dried flowers last?</h4>
+              <i class="ph ph-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Our professionally dried flowers can last for years if kept out of direct sunlight and high humidity. We use archival methods to preserve their natural colors as long as possible.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <div class="faq-question">
+              <h4>Do you offer international shipping?</h4>
+              <i class="ph ph-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Currently, we only ship within the continental US to ensure our delicate products and glass frames arrive in perfect condition without prolonged transit times.</p>
+            </div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <div class="faq-question">
+              <h4>Can I customize a DIY kit?</h4>
+              <i class="ph ph-plus"></i>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! We can tailor kits for special occasions or bulk orders. Please contact us through our inquiry form for any custom kit requests.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- STRIPE_INTEGRATION -->
     <div class="container" style="text-align: center; margin-top: 80px;">
-       <!-- <button id="checkout-button">Pay with Stripe</button> -->
+      <!-- <button id="checkout-button">Pay with Stripe</button> -->
     </div>
   </main>
 
@@ -140,7 +333,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Collection</a></li>
           <li><a href="wedding.html">Wedding</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="workshop.html">Workshop</a><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
@@ -169,5 +362,19 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', () => {
+        const item = question.parentElement;
+        item.classList.toggle('active');
+        
+        // Optional: Close other open items
+        document.querySelectorAll('.faq-item').forEach(otherItem => {
+          if (otherItem !== item) otherItem.classList.remove('active');
+        });
+      });
+    });
+  </script>
 </body>
+
 </html>

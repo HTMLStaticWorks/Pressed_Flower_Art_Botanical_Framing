@@ -1,33 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us | Bloom Botanical Studio</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-  
+
   <style>
-    .about-hero { padding: 180px 0 100px; text-align: center; }
-    .about-content { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-bottom: 120px; }
-    .timeline-simple { margin: 80px 0; }
-    .timeline-row { display: flex; gap: 40px; margin-bottom: 40px; }
-    .timeline-year { font-family: var(--font-serif); font-size: 2rem; color: var(--color-primary); flex-shrink: 0; width: 100px; }
+    .about-hero {
+      padding: 180px 0 100px;
+      text-align: center;
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-bottom: 120px;
+    }
+
+    .timeline-simple {
+      margin: 80px 0;
+    }
+
+    .timeline-row {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .timeline-year {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      color: var(--color-primary);
+      flex-shrink: 0;
+      width: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 80px;
+      }
+
+      .about-content h2 {
+        text-align: center !important;
+      }
+
+      .about-content p {
+        text-align: center;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <header class="navbar">
     <div class="container nav-container">
       <a href="index.html" class="logo">Bloom</a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
+          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html"
+          class="active">About</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a
+          href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -43,7 +91,10 @@
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html" class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="services.html">Collection</a><a
+        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="about.html">About</a><a
+        href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html"
+        class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
     </div>
     <div class="drawer-actions">
       <button class="theme-toggle"><i class="ph ph-moon"></i></button>
@@ -59,12 +110,15 @@
 
     <section class="container about-content">
       <div data-reveal>
-        <img src="https://images.unsplash.com/photo-1544411047-c491574abb22?auto=format&fit=crop&q=80&w=1000" alt="Artist at work" style="border-radius: var(--radius);">
+        <img src="assets/images/about-artist-at-work.jpg" alt="Artist at work" style="border-radius: var(--radius);">
       </div>
       <div data-reveal>
         <h2 style="text-align: left;">Archiving Nature's Beauty</h2>
-        <p style="margin: 25px 0;">Founded in 2018, Bloom began as a small herbarium project in a sun-drenched studio. Our founder, Elena Thorne, was inspired by the ancient Japanese art of Oshibana and the desire to make the fleeting beauty of a wedding bouquet last forever.</p>
-        <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern archival framing to create museum-quality art for homes around the world.</p>
+        <p style="margin: 25px 0;">Founded in 2018, Bloom began as a small herbarium project in a sun-drenched studio.
+          Our founder, Elena Thorne, was inspired by the ancient Japanese art of Oshibana and the desire to make the
+          fleeting beauty of a wedding bouquet last forever.</p>
+        <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern archival
+          framing to create museum-quality art for homes around the world.</p>
       </div>
     </section>
 
@@ -104,10 +158,14 @@
         <h2 data-reveal>Meet the Artist</h2>
       </div>
       <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-reveal>
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400" alt="Elena" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 25px;">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
+          alt="Elena"
+          style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px;">
         <h3>Elena Thorne</h3>
-        <p style="font-style: italic; color: var(--color-primary); margin-bottom: 20px;">Founder & Lead Preservationist</p>
-        <p>"To press a flower is to stop time. My goal is to ensure that the beauty we find in nature can be cherished for generations, not just for a season."</p>
+        <p style="font-style: italic; color: var(--color-primary); margin-bottom: 20px;">Founder & Lead Preservationist
+        </p>
+        <p>"To press a flower is to stop time. My goal is to ensure that the beauty we find in nature can be cherished
+          for generations, not just for a season."</p>
       </div>
     </section>
   </main>
@@ -129,7 +187,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Collection</a></li>
           <li><a href="wedding.html">Wedding</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="workshop.html">Workshop</a><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
@@ -159,4 +217,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

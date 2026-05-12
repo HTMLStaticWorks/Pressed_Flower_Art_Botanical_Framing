@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Collection | Bloom Botanical Studio</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-  
+
   <style>
     .page-header {
       padding: 150px 0 80px;
@@ -32,13 +35,19 @@
       padding: 8px 24px;
       border: 1px solid var(--text-muted);
       background: transparent;
+      color: var(--text-primary);
       cursor: pointer;
       font-family: var(--font-sans);
       transition: var(--transition);
       border-radius: var(--radius);
     }
 
-    .filter-btn.active, .filter-btn:hover {
+    [data-theme="dark"] .filter-btn {
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
       background: var(--color-primary);
       color: white;
       border-color: var(--color-primary);
@@ -51,14 +60,16 @@
       background: var(--bg-secondary);
     }
 
-    .pricing-table th, .pricing-table td {
+    .pricing-table th,
+    .pricing-table td {
       padding: 25px;
-      border: 1px solid rgba(0,0,0,0.05);
+      border: 1px solid rgba(0, 0, 0, 0.05);
       text-align: left;
     }
 
-    [data-theme="dark"] .pricing-table td, [data-theme="dark"] .pricing-table th {
-      border: 1px solid rgba(255,255,255,0.05);
+    [data-theme="dark"] .pricing-table td,
+    [data-theme="dark"] .pricing-table th {
+      border: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .pricing-table th {
@@ -67,8 +78,24 @@
       font-family: var(--font-serif);
       font-size: 1.2rem;
     }
+
+    /* Collection Grid */
+    .collection-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 600px) {
+      .collection-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar (Fixed across all) -->
@@ -80,7 +107,7 @@
         <a href="home2.html">Home 2</a>
         <a href="services.html" class="active">Collection</a>
         <a href="wedding.html">Wedding</a>
-        <a href="workshop.html">Workshop</a>
+        <a href="workshop.html">Workshop</a><a href="about.html">About</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -103,7 +130,7 @@
       <a href="home2.html">Home 2</a>
       <a href="services.html">Collection</a>
       <a href="wedding.html">Wedding</a>
-      <a href="workshop.html">Workshop</a>
+      <a href="workshop.html">Workshop</a><a href="about.html">About</a>
       <a href="shop.html">Shop</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
@@ -132,41 +159,44 @@
       </div>
 
       <div class="collection-grid">
-        <!-- Reusing cards with more variety -->
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1591123720164-de1348028a82?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="card-img">
+          <img src="assets/images/collection-nordic-fern.jpg" alt="Nordic Fern" class="card-img">
           <div class="card-body">
             <h3 class="card-title">Nordic Fern</h3>
             <p class="card-text">Single specimen study in a black minimalist frame.</p>
             <p style="font-weight: 600; color: var(--color-primary);">$120.00</p>
-            <button class="btn btn-outline" style="margin-top: 15px;" onclick="addToCart({name: 'Nordic Fern', price: 120})">Add to Cart</button>
+            <button class="btn btn-outline" style="margin-top: 15px;"
+              onclick="addToCart({name: 'Nordic Fern', price: 120})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="card-img">
+          <img src="assets/images/collection-meadow-bloom.jpg" alt="Meadow Bloom" class="card-img">
           <div class="card-body">
             <h3 class="card-title">Meadow Bloom</h3>
             <p class="card-text">A vibrant arrangement of wildflowers on parchment.</p>
             <p style="font-weight: 600; color: var(--color-primary);">$145.00</p>
-            <button class="btn btn-outline" style="margin-top: 15px;" onclick="addToCart({name: 'Meadow Bloom', price: 145})">Add to Cart</button>
+            <button class="btn btn-outline" style="margin-top: 15px;"
+              onclick="addToCart({name: 'Meadow Bloom', price: 145})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="card-img">
+          <img src="assets/images/collection-autumn-leaf.jpg" alt="Autumn Leaf" class="card-img">
           <div class="card-body">
             <h3 class="card-title">Autumn Leaf</h3>
             <p class="card-text">Golden hues preserved in floating glass. Oak frame.</p>
             <p style="font-weight: 600; color: var(--color-primary);">$95.00</p>
-            <button class="btn btn-outline" style="margin-top: 15px;" onclick="addToCart({name: 'Autumn Leaf', price: 95})">Add to Cart</button>
+            <button class="btn btn-outline" style="margin-top: 15px;"
+              onclick="addToCart({name: 'Autumn Leaf', price: 95})">Add to Cart</button>
           </div>
         </div>
         <div class="card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1516102228333-820892095697?auto=format&fit=crop&q=80&w=800" alt="Specimen" class="card-img">
+          <img src="assets/images/collection-herbarium-duo.jpg" alt="Herbarium Duo" class="card-img">
           <div class="card-body">
             <h3 class="card-title">Herbarium Duo</h3>
             <p class="card-text">A paired study of botanical contrasts. Set of two.</p>
             <p style="font-weight: 600; color: var(--color-primary);">$210.00</p>
-            <button class="btn btn-outline" style="margin-top: 15px;" onclick="addToCart({name: 'Herbarium Duo', price: 210})">Add to Cart</button>
+            <button class="btn btn-outline" style="margin-top: 15px;"
+              onclick="addToCart({name: 'Herbarium Duo', price: 210})">Add to Cart</button>
           </div>
         </div>
       </div>
@@ -240,7 +270,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Collection</a></li>
           <li><a href="wedding.html">Wedding</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="workshop.html">Workshop</a><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
@@ -270,4 +300,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

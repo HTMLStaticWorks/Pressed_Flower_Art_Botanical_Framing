@@ -1,50 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bloom | Editorial Journal</title>
-  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-  
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+
   <script src="https://unpkg.com/@phosphor-icons/web"></script>
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
-  
+
   <style>
     .editorial-hero {
-      height: 90vh;
+      height: 100vh;
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 0;
       overflow: hidden;
-      margin-top: var(--nav-height);
     }
 
     .editorial-hero-img {
       height: 100%;
-      background: url('https://images.unsplash.com/photo-1516102228333-820892095697?auto=format&fit=crop&q=80&w=1500') no-repeat center center;
+      background: url('assets/images/editorial-hero.jpg') no-repeat center center;
       background-size: cover;
+      border-right: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .editorial-hero-content {
-      padding: 100px;
+      padding: 120px 80px 80px;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
+      text-align: center;
       background-color: var(--bg);
     }
 
     .editorial-hero-content h1 {
-      text-align: left;
-      font-size: 5rem;
-      margin-bottom: 30px;
+      font-size: clamp(3rem, 5vw, 5rem);
+      margin-bottom: 25px;
+      line-height: 1.1;
+      font-weight: 400;
     }
 
     .editorial-hero-content p {
       margin-bottom: 40px;
+      max-width: 450px;
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 15px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    .hero-btns .btn {
+      flex: 1;
+      padding: 16px 0;
+      text-align: center;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
     }
 
     .featured-journal {
@@ -74,9 +98,35 @@
       bottom: 0;
       left: 0;
       width: 100%;
+      height: 100%;
       padding: 60px;
-      background: linear-gradient(transparent, rgba(0,0,0,0.8));
-      color: white;
+      background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8));
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      text-align: center;
+    }
+
+    .journal-main-overlay h3,
+    .journal-main-overlay p {
+      color: #FFFFFF !important;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .journal-main-overlay p {
+      opacity: 0.9;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .card-body {
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .journal-side-grid {
@@ -85,28 +135,94 @@
       gap: 40px;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 991px) {
       .editorial-hero {
-        grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
         height: auto;
       }
-      .editorial-hero-img {
-        height: 50vh;
-      }
+
       .editorial-hero-content {
-        padding: 60px 20px;
-        text-align: center;
+        order: -1;
+        padding: 80px 20px;
       }
+
+      .editorial-hero-img {
+        height: 60vh;
+      }
+
       .editorial-hero-content h1 {
-        text-align: center;
-        font-size: 3.5rem;
+        font-size: 3rem;
       }
+
+      .hero-btns {
+        max-width: 100%;
+      }
+
       .journal-grid {
         grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .journal-side-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .journal-grid {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      .journal-side-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-main-card {
+        height: 400px;
+      }
+
+      .journal-main-overlay {
+        padding: 40px 30px;
+      }
+    }
+
+    /* Process Grid */
+    .process-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 991px) {
+      .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .process-grid > div:last-child {
+        grid-column: span 2;
+        justify-self: center;
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .process-grid > div:last-child {
+        grid-column: auto;
+        max-width: 100%;
       }
     }
   </style>
 </head>
+
 <body>
 
   <!-- Navbar -->
@@ -119,6 +235,7 @@
         <a href="services.html">Collection</a>
         <a href="wedding.html">Wedding</a>
         <a href="workshop.html">Workshop</a>
+        <a href="about.html">About</a>
         <a href="shop.html">Shop</a>
         <a href="blog.html">Blog</a>
         <a href="contact.html">Contact</a>
@@ -144,6 +261,7 @@
       <a href="services.html">Collection</a>
       <a href="wedding.html">Wedding</a>
       <a href="workshop.html">Workshop</a>
+      <a href="about.html">About</a>
       <a href="shop.html">Shop</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
@@ -160,10 +278,11 @@
       <div class="editorial-hero-img" data-reveal></div>
       <div class="editorial-hero-content">
         <h1 data-reveal class="stagger-1">The Botanical <br> Journal</h1>
-        <p data-reveal class="stagger-2">A curated exploration into the intersection of nature, art, and the preservation of memory.</p>
-        <div data-reveal class="stagger-3">
-          <a href="blog.html" class="btn btn-primary">Read the Stories</a>
-          <a href="shop.html" class="btn btn-outline" style="margin-left: 10px;">Shop the Issue</a>
+        <p data-reveal class="stagger-2">A curated exploration into the intersection of nature, art, and the
+          preservation of memory.</p>
+        <div class="hero-btns stagger-3" data-reveal>
+          <a href="blog.html" class="btn btn-primary">Read Stories</a>
+          <a href="shop.html" class="btn btn-outline">Shop works</a>
         </div>
       </div>
     </section>
@@ -173,43 +292,120 @@
         <h2 data-reveal>Curated Highlights</h2>
       </div>
       <div class="journal-grid">
+
         <div class="journal-main-card" data-reveal>
-          <img src="https://images.unsplash.com/photo-1544411047-c491574abb22?auto=format&fit=crop&q=80&w=1500" alt="Main Journal">
+          <img src="assets/images/journal-herbarium.jpg" alt="Main Journal">
           <div class="journal-main-overlay">
             <h3>The Art of the Herbarium</h3>
             <p>Exploring the 500-year history of botanical documentation and its modern artistic revival.</p>
-            <a href="blog-single.html" class="btn btn-outline" style="border-color: white; color: white; margin-top: 20px;">Read More</a>
+            <a href="blog-single.html" class="btn btn-outline"
+              style="border-color: white; color: white; margin-top: 20px;">Read More</a>
           </div>
         </div>
+
         <div class="journal-side-grid">
           <div class="card" data-reveal>
-            <img src="https://images.unsplash.com/photo-1518133910546-b6c2fb7d79e3?auto=format&fit=crop&q=80&w=600" alt="Small Journal" style="height: 200px; width: 100%; object-fit: cover;">
+            <img src="assets/images/journal-winter-blooms.jpg" alt="Winter Blooms"
+              style="height: 200px; width: 100%; object-fit: cover;">
             <div class="card-body">
               <h4>Winter Blooms</h4>
               <p>Preserving the delicate textures of the coldest season.</p>
             </div>
           </div>
           <div class="card" data-reveal>
-            <img src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&q=80&w=600" alt="Small Journal" style="height: 200px; width: 100%; object-fit: cover;">
+            <img src="assets/images/journal-wedding-heirlooms.jpg" alt="Wedding Heirlooms"
+              style="height: 200px; width: 100%; object-fit: cover;">
             <div class="card-body">
               <h4>Wedding Heirlooms</h4>
               <p>How we transformed Sarah & Tom's bouquet into art.</p>
             </div>
           </div>
         </div>
+
+      </div>
+    </section>
+    <!-- how it works -->
+    <section style="padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>How It Works</h2>
+          <p data-reveal>From a fresh bloom to a framed heirloom — our three-step preservation process.</p>
+        </div>
+
+        <div class="process-grid">
+
+          <div data-reveal class="stagger-1" style="text-align: center;">
+            <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
+              <img src="assets/images/process-step1.jpg" alt="Step 1 - Collect"
+                style="width: 100%; height: 380px; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="position: absolute; top: 20px; left: 20px; width: 44px; height: 44px;
+            background: var(--color-primary); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600;">
+                1
+              </div>
+            </div>
+            <h3 style="margin-bottom: 12px;">Collect</h3>
+            <p style="font-size: 0.95rem;">Choose your blooms at their peak. We guide you on the best specimens for
+              lasting colour and structure.</p>
+          </div>
+
+          <div data-reveal class="stagger-2" style="text-align: center;">
+            <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
+              <img src="assets/images/process-step2.jpg" alt="Step 2 - Press"
+                style="width: 100%; height: 380px; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="position: absolute; top: 20px; left: 20px; width: 44px; height: 44px;
+            background: var(--color-primary); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600;">
+                2
+              </div>
+            </div>
+            <h3 style="margin-bottom: 12px;">Press</h3>
+            <p style="font-size: 0.95rem;">Using traditional high-pressure techniques, each petal and stem is carefully
+              flattened and dried over several weeks.</p>
+          </div>
+
+          <div data-reveal class="stagger-3" style="text-align: center;">
+            <div style="position: relative; overflow: hidden; border-radius: var(--radius); margin-bottom: 30px;">
+              <img src="assets/images/process-step3.jpg" alt="Step 3 - Frame"
+                style="width: 100%; height: 380px; object-fit: cover; display: block; transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);"
+                onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+              <div style="position: absolute; top: 20px; left: 20px; width: 44px; height: 44px;
+            background: var(--color-primary); color: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-family: var(--font-serif); font-size: 1.3rem; font-weight: 600;">
+                3
+              </div>
+            </div>
+            <h3 style="margin-bottom: 12px;">Frame</h3>
+            <p style="font-size: 0.95rem;">Mounted on archival paper and sealed behind UV-protective glass, your
+              botanical art is ready to be cherished for generations.</p>
+          </div>
+
+        </div>
+
+        <div style="text-align: center; margin-top: 60px;" data-reveal>
+          <a href="services.html" class="btn btn-primary">Explore the Collection</a>
+        </div>
       </div>
     </section>
 
     <section style="background: var(--bg-secondary); padding: 100px 0;">
       <div class="container" style="display: flex; gap: 60px; align-items: center; flex-wrap: wrap;">
-        <div style="flex: 1; min-width: 300px;" data-reveal>
-          <h2 style="text-align: left;">Artisanal Supply</h2>
-          <p style="margin: 20px 0;">We provide the same professional-grade tools and dried botanicals used in our studio for your own creative projects.</p>
+        <div style="flex: 1; min-width: 300px; text-align: center;" data-reveal>
+          <h2>Artisanal Supply</h2>
+          <p style="margin: 20px 0;">We provide the same professional-grade tools and dried botanicals used in our
+            studio for your own creative projects.</p>
           <a href="shop.html" class="btn btn-primary">Visit the Shop</a>
         </div>
         <div style="flex: 1.5; min-width: 300px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;" data-reveal>
-           <img src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&q=80&w=500" alt="Supplies 1" style="border-radius: var(--radius);">
-           <img src="https://images.unsplash.com/photo-1583125211029-7f4f69324cc0?auto=format&fit=crop&q=80&w=500" alt="Supplies 2" style="border-radius: var(--radius);">
+          <img src="assets/images/supply-tools.jpg" alt="Botanical pressing tools"
+            style="border-radius: var(--radius);">
+          <img src="assets/images/supply-botanicals.jpg" alt="Dried botanical specimens"
+            style="border-radius: var(--radius);">
         </div>
       </div>
     </section>
@@ -233,7 +429,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="services.html">Collection</a></li>
           <li><a href="wedding.html">Wedding</a></li>
-          <li><a href="workshop.html">Workshop</a></li>
+          <li><a href="workshop.html">Workshop</a><a href="about.html">About</a></li>
           <li><a href="shop.html">Shop</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
@@ -263,4 +459,5 @@
 
   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
