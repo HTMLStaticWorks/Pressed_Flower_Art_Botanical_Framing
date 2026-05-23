@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,36 +20,239 @@
       text-align: center;
       background: var(--bg);
     }
+
     [data-theme="dark"] .about-hero-section {
       border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
+
     .about-content {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: center;
-      margin-bottom: 120px;
     }
+
     .timeline-simple {
-      margin: 80px 0;
+      margin: 60px auto 0;
+      max-width: 700px;
+      text-align: center;
     }
+
     .timeline-row {
       display: flex;
-      gap: 40px;
-      margin-bottom: 40px;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 50px;
     }
+
+    .timeline-row:last-child {
+      margin-bottom: 0;
+    }
+
     .timeline-year {
       font-family: var(--font-serif);
-      font-size: 2rem;
+      font-size: 2.4rem;
       color: var(--color-primary);
-      flex-shrink: 0;
-      width: 100px;
+      font-weight: 600;
+      line-height: 1;
     }
-    @media (max-width: 768px) {
+
+    .timeline-content h3 {
+      font-family: var(--font-sans);
+      font-size: 1.3rem;
+      font-weight: 500;
+      margin-bottom: 8px;
+    }
+
+    .timeline-content p {
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    /* Core Values Grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    /* Our Values Grid */
+    .values-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      margin-top: 60px;
+    }
+
+    /* Studio Grid */
+    .studio-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    /* Studio Images Hover */
+    .studio-images img {
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .studio-images img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+      z-index: 5;
+      position: relative;
+    }
+    [data-theme="dark"] .studio-images img:hover {
+      box-shadow: 0 12px 25px rgba(255, 255, 255, 0.05);
+    }
+
+    /* Studio Heading */
+    .studio-text h2 {
+      font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+      font-family: var(--font-serif);
+      font-weight: 500;
+      line-height: 1.2;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .value-card {
+      text-align: center;
+      padding: 40px 30px;
+      background: var(--bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    [data-theme="dark"] .value-card {
+      background: var(--bg-secondary);
+      border-color: rgba(255, 255, 255, 0.03);
+    }
+
+    .value-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(95, 111, 82, 0.12);
+      border-color: rgba(95, 111, 82, 0.2);
+    }
+    [data-theme="dark"] .value-card:hover {
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* What We Stand For Cards Hover */
+    .values-cards-grid .card {
+      transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .values-cards-grid .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+    [data-theme="dark"] .values-cards-grid .card:hover {
+      box-shadow: 0 20px 40px rgba(255, 255, 255, 0.03);
+    }
+    .values-cards-grid .card img {
+      transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    .values-cards-grid .card:hover img {
+      transform: scale(1.05);
+    }
+
+    .value-icon {
+      font-size: 2.8rem;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+
+    .value-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      font-family: var(--font-serif);
+    }
+
+    .value-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    /* Process Section */
+    .process-timeline {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+
+    .process-number {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      color: var(--color-primary);
+      opacity: 0.15;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .process-step h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      font-family: var(--font-sans);
+      font-weight: 500;
+    }
+
+    .process-step p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 1023px) {
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .values-grid .value-card:last-child {
+        grid-column: span 2;
+        justify-self: center;
+        max-width: calc(50% - 15px);
+        width: 100%;
+      }
+      .values-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .values-cards-grid .card:last-child {
+        grid-column: span 2;
+        justify-self: center;
+        max-width: calc(50% - 15px);
+        width: 100%;
+      }
+      .process-timeline {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+      .studio-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+      .studio-grid .studio-text {
+        order: -1;
+      }
+    }
+
+    @media (max-width: 767px) {
       .about-content {
         grid-template-columns: 1fr;
         gap: 40px;
-        margin-bottom: 80px;
       }
       .about-content h2 {
         text-align: center !important;
@@ -56,18 +260,40 @@
       .about-content p {
         text-align: center;
       }
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .values-grid .value-card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        max-width: 100%;
+      }
+      .values-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .values-cards-grid .card:last-child {
+        grid-column: auto;
+        justify-self: auto;
+        max-width: 100%;
+      }
+      .process-timeline {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="navbar">
     <div class="container nav-container">
-      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+      <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+          class="logo-img"></a>
       <nav class="nav-links">
-        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html"
-          class="active">About</a><a href="services.html">Collection</a><a
-          href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a href="shop.html">Shop</a><a href="blog.html">Blog</a><a
-          href="contact.html">Contact</a>
+        <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a
+          href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
+          href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
         <button class="rtl-toggle"><i class="ph ph-arrows-left-right"></i></button>
@@ -82,8 +308,8 @@
   <div class="nav-drawer">
     <button class="drawer-close"><i class="ph ph-x"></i></button>
     <div class="drawer-links">
-      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a href="services.html">Collection</a><a
-        href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
+      <a href="index.html">Home</a><a href="home2.html">Home 2</a><a href="about.html" class="active">About</a><a
+        href="services.html">Collection</a><a href="wedding.html">Wedding</a><a href="workshop.html">Workshop</a><a
         href="shop.html">Shop</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="login.html"
         class="btn btn-outline" style="margin-top: 20px; text-align: center;">Login</a>
     </div>
@@ -99,22 +325,122 @@
         <p data-reveal class="stagger-1">The passion behind preserving nature's most delicate moments.</p>
       </div>
     </section>
-    <section style="background: var(--bg-secondary); padding: 100px 0;">
-      <div class="container about-content" style="margin-bottom: 0;">
+    <section style="background: var(--bg); padding: 100px 0;">
+      <div class="container about-content">
         <div data-reveal>
-          <img src="assets/images/about-artist-at-work.jpg" alt="Artist at work" style="border-radius: var(--radius);">
+          <img src="assets/images/about-artist-at-work.jpg" alt="Artist at work"
+            style="border-radius: var(--radius); width: 100%; object-fit: cover;">
         </div>
         <div data-reveal>
           <h2 style="text-align: left;">Archiving Nature's Beauty</h2>
           <p style="margin: 25px 0;">Founded in 2018, Bloom began as a small herbarium project in a sun-drenched studio.
             Our founder, Elena Thorne, was inspired by the ancient Japanese art of Oshibana and the desire to make the
             fleeting beauty of a wedding bouquet last forever.</p>
-          <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern archival
+          <p>Today, Bloom is a leading botanical studio, blending traditional preservation techniques with modern
+            archival
             framing to create museum-quality art for homes around the world.</p>
         </div>
       </div>
     </section>
+
+    <!-- Our Philosophy / Core Values (NEW SECTION 1) -->
     <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>Our Philosophy</h2>
+          <p data-reveal>The principles that guide our craft, from local organic micro-farms to the final framed
+            masterpiece.</p>
+        </div>
+        <div class="values-grid">
+          <div class="value-card" data-reveal class="stagger-1">
+            <i class="ph ph-leaf value-icon"></i>
+            <h3>Ethical Sourcing</h3>
+            <p>We partner exclusively with sustainable local micro-farms and licensed gatherers who respect botanical
+              boundaries.</p>
+          </div>
+          <div class="value-card" data-reveal class="stagger-2">
+            <i class="ph ph-shield-check value-icon"></i>
+            <h3>Archival Artistry</h3>
+            <p>Every piece is secured using museum-grade acid-free adhesives, rag mats, and premium UV-protective double
+              glazing.</p>
+          </div>
+          <div class="value-card" data-reveal class="stagger-3">
+            <i class="ph ph-hourglass value-icon"></i>
+            <h3>Sustained Patience</h3>
+            <p>Our slow traditional pressing methods extract moisture gradually over months, safeguarding natural
+              pigment layers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Values -->
+    <section style="padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>What We Stand For</h2>
+          <p data-reveal>Every petal we press is guided by these principles.</p>
+        </div>
+
+        <div class="values-cards-grid">
+
+          <div class="card" data-reveal style="text-align: center; overflow: hidden;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="assets/images/values-purity-rose.jpg" alt="Purity"
+                style="width: 100%; height: 280px; object-fit: cover; display: block;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);">
+              </div>
+              <p
+                style="position: absolute; bottom: 18px; left: 0; right: 0; font-family: var(--font-serif); font-size: 1.6rem; color: #fff; letter-spacing: 0.05em;">
+                Purity</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">We use only archival, chemical-free pressing methods that honour the natural
+                integrity of every bloom — no dyes, no shortcuts.</p>
+            </div>
+          </div>
+
+          <div class="card" data-reveal style="text-align: center; overflow: hidden;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="assets/images/values-craft-fern.jpg" alt="Craft"
+                style="width: 100%; height: 280px; object-fit: cover; display: block;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);">
+              </div>
+              <p
+                style="position: absolute; bottom: 18px; left: 0; right: 0; font-family: var(--font-serif); font-size: 1.6rem; color: #fff; letter-spacing: 0.05em;">
+                Craft</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">Each piece is hand-finished by our studio team. We believe that in a world of mass
+                production, slowness and attention to detail are radical acts.</p>
+            </div>
+          </div>
+
+          <div class="card" data-reveal style="text-align: center; overflow: hidden;">
+            <div style="position: relative; overflow: hidden;">
+              <img src="assets/images/values-memory-desert-rose.jpg" alt="Memory"
+                style="width: 100%; height: 280px; object-fit: cover; display: block;">
+              <div
+                style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.45), transparent);">
+              </div>
+              <p
+                style="position: absolute; bottom: 18px; left: 0; right: 0; font-family: var(--font-serif); font-size: 1.6rem; color: #fff; letter-spacing: 0.05em;">
+                Memory</p>
+            </div>
+            <div class="card-body">
+              <p class="card-text">A pressed flower is a moment made permanent. We treat every commission as a privilege
+                — whether it's a wedding bouquet or a wildflower from a favourite walk.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Milestones (CENTERED CONTENT) -->
+    <section style="background: var(--bg); padding: 100px 0;">
       <div class="container">
         <div class="section-title">
           <h2 data-reveal>Studio Milestones</h2>
@@ -122,48 +448,126 @@
         <div class="timeline-simple">
           <div class="timeline-row" data-reveal>
             <div class="timeline-year">2018</div>
-            <div>
+            <div class="timeline-content">
               <h3>Studio Founding</h3>
-              <p>Bloom opens its first studio space, focusing on local wildflower studies.</p>
+              <p>Bloom opens its first studio space, focusing on local wildflower studies and artisan herbarium designs.
+              </p>
             </div>
           </div>
           <div class="timeline-row" data-reveal>
             <div class="timeline-year">2020</div>
-            <div>
+            <div class="timeline-content">
               <h3>Wedding Preservation Launch</h3>
-              <p>We launched our nationwide bouquet preservation service, transforming bridal memories into art.</p>
+              <p>We launched our nationwide bouquet preservation service, transforming bridal memories into enduring
+                fine art.</p>
             </div>
           </div>
           <div class="timeline-row" data-reveal>
             <div class="timeline-year">2022</div>
-            <div>
+            <div class="timeline-content">
               <h3>Workshop Program</h3>
-              <p>Our studio doors opened to the public for hands-on learning in botanical preservation.</p>
+              <p>Our studio doors opened to the public for hands-on learning, fostering a deep connection with nature's
+                seasons.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="container">
-      <div class="section-title">
-        <h2 data-reveal>Meet the Artist</h2>
+
+    <!-- The Creative Process
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>The Creative Process</h2>
+          <p data-reveal>How we transform ephemeral fresh blooms into timeless, archival framed works of art.</p>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step" data-reveal class="stagger-1">
+            <div class="process-number">01</div>
+            <h3>Precise Harvesting</h3>
+            <p>Selected at peak bloom during low humidity morning hours to maximize cellular vibrancy.</p>
+          </div>
+          <div class="process-step" data-reveal class="stagger-2">
+            <div class="process-number">02</div>
+            <h3>Slow Oshibana Pressing</h3>
+            <p>Subjected to weeks of graduated manual pressure using custom Japanese moisture absorption plates.</p>
+          </div>
+          <div class="process-step" data-reveal class="stagger-3">
+            <div class="process-number">03</div>
+            <h3>Artistic Curation</h3>
+            <p>Arranged on acid-free linen backgrounds in layouts designed to balance motion, weight, and tone.</p>
+          </div>
+          <div class="process-step" data-reveal class="stagger-4">
+            <div class="process-number">04</div>
+            <h3>Archival Framing</h3>
+            <p>Sealed in locally-sourced hand-milled hardwood frames behind museum-grade UV-filter glass.</p>
+          </div>
+        </div>
       </div>
-      <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-reveal>
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
-          alt="Elena"
-          style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px;">
-        <h3>Elena Thorne</h3>
-        <p style="font-style: italic; color: var(--color-primary); margin-bottom: 20px;">Founder & Lead Preservationist
-        </p>
-        <p>"To press a flower is to stop time. My goal is to ensure that the beauty we find in nature can be cherished
-          for generations, not just for a season."</p>
+    </section>
+ (NEW SECTION 2) -->
+
+
+
+    <!-- The Studio Space -->
+    <section style="background: var(--bg-secondary); padding: 100px 0;">
+      <div class="container">
+        <div class="studio-grid">
+
+          <!-- Mosaic Images -->
+          <div class="studio-images" data-reveal
+            style="display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 16px;">
+            <img src="assets/images/studio-bouquet-wide.jpg" alt=" Studio florals"
+              style="grid-column: 1 / -1; width: 100%; height: 320px; object-fit: cover; border-radius: var(--radius); display: block;">
+            <img src="assets/images/studio-pressed-rose.jpg" alt="Pressed rose"
+              style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); display: block;">
+            <img src="assets/images/studio-pressed-fern.jpg" alt="Pressed fern"
+              style="width: 100%; height: 200px; object-fit: cover; border-radius: var(--radius); display: block;">
+          </div>
+
+          <!-- Text -->
+          <div class="studio-text" style="text-align: center;" data-reveal>
+            <p
+              style="font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 20px;">
+              Where the Work Happens</p>
+            <h2>A Studio Built for <br>Botanical Devotion</h2>
+            <p style="margin-bottom: 20px;">Nestled in a light-filled California warehouse, our studio is designed
+              around the rhythm of nature. Large windows flood the pressing tables with soft northern light — the same
+              light that reveals every vein, every texture in a petal.</p>
+            <p style="margin-bottom: 36px;">Our walls are lined with drying racks, specimen drawers, and decades of
+              pressed flowers archived in hand-labelled linen folders. It smells like dried lavender and old books.</p>
+            <div style="width: 50px; height: 1px; background: var(--color-primary); margin: 0 auto 36px;"></div>
+            <a href="contact.html" class="btn btn-primary">Visit the Studio</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <!-- Meet the Artist -->
+    <section style="background: var(--bg); padding: 100px 0;">
+      <div class="container">
+        <div class="section-title">
+          <h2 data-reveal>Meet the Artist</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;" data-reveal>
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=400"
+            alt="Elena"
+            style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 25px; box-shadow: var(--shadow);">
+          <h3>Elena Thorne</h3>
+          <p style="font-style: italic; color: var(--color-primary); margin-bottom: 20px;">Founder & Lead
+            Preservationist
+          </p>
+          <p>"To press a flower is to stop time. My goal is to ensure that the beauty we find in nature can be cherished
+            for generations, not just for a season."</p>
+        </div>
       </div>
     </section>
   </main>
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
-        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio" class="logo-img"></a>
+        <a href="index.html" class="logo"><img src="assets/images/bloom-logo.svg" alt="Bloom Botanical Studio"
+            class="logo-img"></a>
         <p>Curating nature's ephemeral beauty into timeless botanical art.</p>
         <div class="social-links">
           <a href="#"><i class="ph-instagram-logo"></i></a>
@@ -207,7 +611,5 @@
   <script src="assets/js/main.js"></script>
   <button class="back-to-top" id="backToTop" title="Back to Top"><i class="ph ph-caret-up"></i></button>
 </body>
+
 </html>
-
-
-

@@ -679,10 +679,7 @@ footer {
 .stat-item {
   padding: 2.5rem 1.5rem;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.stat-item:first-child {
-  padding-left: 0;
+  text-align: center;
 }
 
 .stat-item:last-child {
@@ -718,11 +715,6 @@ footer {
   .stat-item:nth-child(n+3) {
     border-bottom: none;
   }
-
-  .stat-item:first-child,
-  .stat-item:nth-child(3) {
-    padding-left: 0;
-  }
 }
 
 @media (max-width: 360px) {
@@ -752,7 +744,7 @@ footer {
   width: 20px;
   height: 1px;
   background: rgba(0, 0, 0, 0.2);
-  margin: 0.75rem 0;
+  margin: 0.75rem auto;
 }
 
 [data-theme="dark"] .stat-rule {
